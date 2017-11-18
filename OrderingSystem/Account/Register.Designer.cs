@@ -33,7 +33,7 @@
             this.fullnameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.customerTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.registerBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.customerPictureBox.Location = new System.Drawing.Point(134, 12);
             this.customerPictureBox.Name = "customerPictureBox";
             this.customerPictureBox.Size = new System.Drawing.Size(150, 150);
-            this.customerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.customerPictureBox.TabIndex = 0;
             this.customerPictureBox.TabStop = false;
             this.customerPictureBox.DoubleClick += new System.EventHandler(this.customerPictureBox_DoubleClick);
@@ -91,14 +91,15 @@
             this.customerTypeComboBox.Size = new System.Drawing.Size(277, 21);
             this.customerTypeComboBox.TabIndex = 3;
             // 
-            // button1
+            // registerBtn
             // 
-            this.button1.Location = new System.Drawing.Point(150, 385);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 35);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = true;
+            this.registerBtn.Location = new System.Drawing.Point(150, 385);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(109, 35);
+            this.registerBtn.TabIndex = 4;
+            this.registerBtn.Text = "Register";
+            this.registerBtn.UseVisualStyleBackColor = true;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
             // label3
             // 
@@ -139,7 +140,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(410, 453);
             this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.customerTypeComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -165,7 +166,7 @@
         private System.Windows.Forms.TextBox fullnameTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox customerTypeComboBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button registerBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label label4;

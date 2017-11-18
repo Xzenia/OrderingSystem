@@ -29,6 +29,38 @@ namespace DatabaseController
             return addsContentToDataSet;
         }
 
+        public Boolean addUserInfo(byte[] customerImage, String customerName, String customerType)
+        {
+            using (SqlCommand cmd = new SqlCommand("SP_ADDNEWCUSTOMERDATA", connect))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@customerImage", customerImage);
+                cmd.Parameters.AddWithValue("@customerName", customerName);
+                cmd.Parameters.AddWithValue("@customerType", customerType);
+                return executeQuery(cmd);
+            }
+        }
+
+        public Boolean executeQuery(SqlCommand cmd)
+        {
+            connect.Open();
+            int i = cmd.ExecuteNonQuery();
+            connect.Close();
+
+            if (i != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+
+
 
     }
 }

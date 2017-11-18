@@ -70,11 +70,11 @@ namespace OrderingSystem.Admin
                 DataGridViewRow row = this.productListGridView.Rows[e.RowIndex];
                 byte[] img = (byte[])row.Cells[1].Value;
                 MemoryStream ms = new MemoryStream(img);
-                productPictureBox.Image = Image.FromStream(ms);   
+                productPictureBox.Image = Image.FromStream(ms);
                 productNameField.Text = row.Cells[2].Value.ToString();
                 productPriceField.Text = row.Cells[3].Value.ToString();
                 productStockField.Text = row.Cells[4].Value.ToString();
-                productCategoryComboBox.Text = row.Cells[5].Value.ToString();   
+                productCategoryComboBox.Text = row.Cells[5].Value.ToString();
             }
         }
 
@@ -93,7 +93,7 @@ namespace OrderingSystem.Admin
             catch (Exception openFileDialogException)
             {
                 MessageBox.Show(openFileDialogException.Message);
-            }   
+            }
         }
     }
 }

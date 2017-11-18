@@ -59,7 +59,7 @@
             this.productListGridView.MultiSelect = false;
             this.productListGridView.Name = "productListGridView";
             this.productListGridView.ReadOnly = true;
-            this.productListGridView.Size = new System.Drawing.Size(487, 375);
+            this.productListGridView.Size = new System.Drawing.Size(677, 417);
             this.productListGridView.TabIndex = 0;
             this.productListGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productListGridView_CellClick);
             // 
@@ -160,7 +160,7 @@
             this.productPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("productPictureBox.InitialImage")));
             this.productPictureBox.Location = new System.Drawing.Point(106, 12);
             this.productPictureBox.Name = "productPictureBox";
-            this.productPictureBox.Size = new System.Drawing.Size(130, 130);
+            this.productPictureBox.Size = new System.Drawing.Size(129, 127);
             this.productPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.productPictureBox.TabIndex = 5;
             this.productPictureBox.TabStop = false;
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 407);
+            this.ClientSize = new System.Drawing.Size(1006, 441);
             this.Controls.Add(this.productPictureBox);
             this.Controls.Add(this.productCategoryComboBox);
             this.Controls.Add(this.label4);
