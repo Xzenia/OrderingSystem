@@ -16,5 +16,24 @@ namespace OrderingSystem.Account
         {
             InitializeComponent();
         }
+
+        private void customerPictureBox_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog dialog = new OpenFileDialog();
+                dialog.Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png|GIF (*.gif)|*.gif";
+                dialog.Title = "Select Product Picture";
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    customerPictureBox.ImageLocation = dialog.FileName.ToString();
+                }
+            }
+            catch (Exception openFileDialogException)
+            {
+                MessageBox.Show(openFileDialogException.Message);
+            }   
+        }
+
     }
 }
