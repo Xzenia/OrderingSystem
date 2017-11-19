@@ -38,12 +38,12 @@
             this.orderFoodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountSettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewOrdersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.loginToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,6 +125,20 @@
             this.accountSettingsToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.accountSettingsToolStripMenuItem.Text = "Account Settings";
             // 
+            // registerToolStripMenuItem
+            // 
+            this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.registerToolStripMenuItem.Text = "Register";
+            this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
+            // 
+            // loginToolStripMenuItem1
+            // 
+            this.loginToolStripMenuItem1.Name = "loginToolStripMenuItem1";
+            this.loginToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
+            this.loginToolStripMenuItem1.Text = "Login";
+            this.loginToolStripMenuItem1.Click += new System.EventHandler(this.loginToolStripMenuItem1_Click);
+            // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -154,19 +168,6 @@
             this.viewCustomersToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.viewCustomersToolStripMenuItem.Text = "View Customers";
             this.viewCustomersToolStripMenuItem.Click += new System.EventHandler(this.viewCustomersToolStripMenuItem_Click);
-            // 
-            // registerToolStripMenuItem
-            // 
-            this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            this.registerToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.registerToolStripMenuItem.Text = "Register";
-            this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
-            // 
-            // loginToolStripMenuItem1
-            // 
-            this.loginToolStripMenuItem1.Name = "loginToolStripMenuItem1";
-            this.loginToolStripMenuItem1.Size = new System.Drawing.Size(164, 22);
-            this.loginToolStripMenuItem1.Text = "Login";
             // 
             // Form1
             // 

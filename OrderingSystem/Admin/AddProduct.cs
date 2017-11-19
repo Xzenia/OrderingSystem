@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.IO;
 using DatabaseController;
 using OrderingSystem.ImageClass;
+using OrderingSystem.Data;
+
 namespace OrderingSystem.Admin
 {
     public partial class AddProduct : Form
@@ -18,6 +20,7 @@ namespace OrderingSystem.Admin
         ProductDatabaseController pdc = new ProductDatabaseController();
         ProductManagement pm = new ProductManagement();
         ImageLibrary imgLib = new ImageLibrary();
+        DataCheck dataChk = new DataCheck();
         BindingSource bs = new BindingSource();
         String imageLocation = "";
 
@@ -47,54 +50,50 @@ namespace OrderingSystem.Admin
         
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            if (checkInputs() == false)
+            byte[] productImage;
+            if (dataChk.checkInputs(productPriceField.Text, productStockField.Text) == false)
             {
                 MessageBox.Show("One or more textfields contain an invalid character!");
             }
             else
             {
-                byte[] img = imgLib.addImage(imageLocation);
-                string productName = productNameField.Text;
-                double price = Convert.ToDouble(productPriceField.Text);
-                int stock = Convert.ToInt32(productStockField.Text);
-                string productCategory = productCategoryComboBox.Text;
-                Boolean confirm = pdc.addProduct(img, productName, price, stock, productCategory);
+                try
+                {
+                    //This is temporary. A default image will be added and this message will not be needed.
+                    if (imageLocation == "")
+                    {
+                        MessageBox.Show("Please add an image of the product.");
+                    }
+                    else
+                    {
+                        productImage = imgLib.addImage(imageLocation);
+                        string productName = productNameField.Text;
+                        double price = Convert.ToDouble(productPriceField.Text);
+                        int stock = Convert.ToInt32(productStockField.Text);
+                        string productCategory = productCategoryComboBox.Text;
+                        Boolean confirm = pdc.addProduct(productImage, productName, price, stock, productCategory);
 
-                if (confirm)
-                {
-                    MessageBox.Show("Data added to database successfully!");
-                    productNameField.Text = "";
-                    productPriceField.Text = "";
-                    productStockField.Text = "";
-                    pm.loadDatabase();
+                        if (confirm)
+                        {
+                            MessageBox.Show("Data added to database successfully!");
+                            productNameField.Text = "";
+                            productPriceField.Text = "";
+                            productStockField.Text = "";
+                            pm.loadDatabase();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Data was not sent to database!");
+                        }        
+                    }
+                    
                 }
-                else
+                catch (Exception dataException)
                 {
-                    MessageBox.Show("Data was not sent to database!");
+                    MessageBox.Show(dataException.Message);
                 }
-                
+   
             }
         }
-
-        private Boolean checkInputs()
-        {
-            double testValue;
-            int anotherTestValue;
-            if (!double.TryParse(productPriceField.Text, out testValue))
-            {
-                return false;
-            }
-            else if (!int.TryParse(productStockField.Text, out anotherTestValue))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
- 
-
     }
-
 }

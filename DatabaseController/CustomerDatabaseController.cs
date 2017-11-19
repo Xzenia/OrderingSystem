@@ -29,14 +29,15 @@ namespace DatabaseController
             return addsContentToDataSet;
         }
 
-        public Boolean addUserInfo(byte[] customerImage, String customerName, String customerType)
+        public Boolean addUserInfo(int customerId, byte[] customerImage, String customerName, String customerType)
         {
             using (SqlCommand cmd = new SqlCommand("SP_ADDNEWCUSTOMERDATA", connect))
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@customerImage", customerImage);
-                cmd.Parameters.AddWithValue("@customerName", customerName);
-                cmd.Parameters.AddWithValue("@customerType", customerType);
+                cmd.Parameters.AddWithValue("@CustomerId", customerId);
+                cmd.Parameters.AddWithValue("@CustomerImage", customerImage);
+                cmd.Parameters.AddWithValue("@CustomerName", customerName);
+                cmd.Parameters.AddWithValue("@CustomerType", customerType);
                 return executeQuery(cmd);
             }
         }
@@ -56,11 +57,5 @@ namespace DatabaseController
                 return false;
             }
         }
-
-
-
-
-
-
     }
 }

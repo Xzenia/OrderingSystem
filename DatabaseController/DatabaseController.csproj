@@ -41,7 +41,7 @@
   <ItemGroup>
     <Compile Include="AccountTableDatabaseController.cs" />
     <Compile Include="CustomerDatabaseController.cs" />
-    <Compile Include="Security.cs" />
+    <Compile Include="HashPassword.cs" />
     <Compile Include="ProductDatabaseController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

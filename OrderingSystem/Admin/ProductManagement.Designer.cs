@@ -42,6 +42,8 @@
             this.productCategoryComboBox = new System.Windows.Forms.ComboBox();
             this.productPictureBox = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.productIdField = new System.Windows.Forms.TextBox();
+            this.deleteBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productListGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -175,11 +177,31 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Product Picture: ";
             // 
+            // productIdField
+            // 
+            this.productIdField.Location = new System.Drawing.Point(876, 435);
+            this.productIdField.Name = "productIdField";
+            this.productIdField.ReadOnly = true;
+            this.productIdField.Size = new System.Drawing.Size(107, 20);
+            this.productIdField.TabIndex = 6;
+            this.productIdField.Visible = false;
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.Location = new System.Drawing.Point(97, 395);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(120, 34);
+            this.deleteBtn.TabIndex = 1;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = true;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
             // ProductManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 441);
+            this.ClientSize = new System.Drawing.Size(1006, 454);
+            this.Controls.Add(this.productIdField);
             this.Controls.Add(this.productPictureBox);
             this.Controls.Add(this.productCategoryComboBox);
             this.Controls.Add(this.label4);
@@ -190,6 +212,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.productPriceField);
             this.Controls.Add(this.productNameField);
+            this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.EditBtn);
             this.Controls.Add(this.AddBtn);
             this.Controls.Add(this.productListGridView);
@@ -218,5 +241,7 @@
         private System.Windows.Forms.ComboBox productCategoryComboBox;
         private System.Windows.Forms.PictureBox productPictureBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox productIdField;
+        private System.Windows.Forms.Button deleteBtn;
     }
 }

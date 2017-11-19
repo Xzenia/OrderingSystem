@@ -10,13 +10,18 @@ using System.Windows.Forms;
 using System.IO;
 using DatabaseController;
 using OrderingSystem.Global;
-
+using OrderingSystem.Data;
+using OrderingSystem.ImageClass;
 namespace OrderingSystem.Admin
 {
     public partial class ProductManagement : Form
     {
         ProductDatabaseController pdc = new ProductDatabaseController();
         BindingSource bs = new BindingSource();
+        ImageLibrary imgLib = new ImageLibrary();
+        DataCheck dataChk = new DataCheck();
+        String imageLocation = "";
+        byte[] tempImg;
         public ProductManagement()
         {
             InitializeComponent();
@@ -28,24 +33,6 @@ namespace OrderingSystem.Admin
             productCategoryComboBox.SelectedIndex = 0;
         }
 
-        private Boolean checkInputs()
-        {
-            double testValue;
-            int anotherTestValue;
-            if (!double.TryParse(productPriceField.Text, out testValue))
-            {
-                return false;
-            }
-            else if (!int.TryParse(productStockField.Text, out anotherTestValue))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
         public void loadDatabase()
         {
             bs.DataSource = pdc.viewAllData("SP_VIEWALLPRODUCTDATA").Tables[0];
@@ -53,6 +40,43 @@ namespace OrderingSystem.Admin
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
+        {
+            byte[] productImage;
+            if (dataChk.checkInputs(productPriceField.Text, productStockField.Text))
+            {
+                if (imageLocation == "")
+                {
+                    productImage = tempImg;
+                }
+                else
+                {
+                    productImage = (byte[])imgLib.addImage(imageLocation);
+                }
+
+                int productId = Convert.ToInt32(productIdField.Text);
+                string productName = productNameField.Text;
+                double productPrice = Convert.ToDouble(productPriceField.Text);
+                int productStock = Convert.ToInt32(productStockField.Text);
+                string productCategory = productCategoryComboBox.Text;
+                Boolean confirm = pdc.updateProductData(productId, productImage, productName, productPrice, productStock, productCategory);
+                
+                if (confirm)
+                {
+                    MessageBox.Show("Product information successfully updated!");
+                    loadDatabase();
+                }
+                else
+                {
+                    MessageBox.Show("Product information was not successfully updated!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("One or multiple fields contain invalid characters!");
+            }
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
         {
 
         }
@@ -63,19 +87,29 @@ namespace OrderingSystem.Admin
             GlobalClass.CheckMdiChildren(goToAddProduct);
             loadDatabase();
         }
+
         private void productListGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            try
             {
-                DataGridViewRow row = this.productListGridView.Rows[e.RowIndex];
-                byte[] img = (byte[])row.Cells[1].Value;
-                MemoryStream ms = new MemoryStream(img);
-                productPictureBox.Image = Image.FromStream(ms);
-                productNameField.Text = row.Cells[2].Value.ToString();
-                productPriceField.Text = row.Cells[3].Value.ToString();
-                productStockField.Text = row.Cells[4].Value.ToString();
-                productCategoryComboBox.Text = row.Cells[5].Value.ToString();
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.productListGridView.Rows[e.RowIndex];
+                    productIdField.Text = row.Cells[0].Value.ToString();
+                    tempImg = (byte[])row.Cells[1].Value;
+                    MemoryStream ms = new MemoryStream(tempImg);
+                    productPictureBox.Image = Image.FromStream(ms);
+                    productNameField.Text = row.Cells[2].Value.ToString();
+                    productPriceField.Text = row.Cells[3].Value.ToString();
+                    productStockField.Text = row.Cells[4].Value.ToString();
+                    productCategoryComboBox.Text = row.Cells[5].Value.ToString();
+                }
             }
+            catch (Exception cellClickException)
+            {
+                MessageBox.Show(cellClickException.Message);
+            }
+            
         }
 
         private void productPictureBox_DoubleClick(object sender, EventArgs e)
@@ -87,7 +121,8 @@ namespace OrderingSystem.Admin
                 dialog.Title = "Select Product Picture";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    productPictureBox.ImageLocation = dialog.FileName.ToString();
+                    imageLocation = dialog.FileName.ToString();
+                    productPictureBox.ImageLocation = imageLocation;
                 }
             }
             catch (Exception openFileDialogException)

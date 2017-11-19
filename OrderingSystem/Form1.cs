@@ -38,6 +38,12 @@ namespace OrderingSystem
             GlobalClass.CheckMdiChildren(goToRegisterPage);
         }
 
+        private void loginToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Login goToLoginPage = new Login();
+            GlobalClass.CheckMdiChildren(goToLoginPage);
+        }
+
 
     }
 }

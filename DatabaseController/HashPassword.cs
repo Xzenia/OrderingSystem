@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace DatabaseController
 {
-    public class Security
+    public class HashPassword
     {
-        public string HashSHA1(string value)
+        public string HashSHA256(string value)
         {
-            var sha1 = System.Security.Cryptography.SHA1.Create();
+            var sha256 = System.Security.Cryptography.SHA256.Create();
             var inputBytes = Encoding.ASCII.GetBytes(value);
-            var hash = sha1.ComputeHash(inputBytes);
-
+            var hash = sha256.ComputeHash(inputBytes);
+            
+            //Creates a string and converts the bytes of the hash variable into hexadecimal and concatenates it into the string
+            //More info about line 23 here: https://stackoverflow.com/a/20750093
+            
             var sb = new StringBuilder();
             for (var i = 0; i < hash.Length; i++)
             {

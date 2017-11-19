@@ -19,9 +19,15 @@ namespace OrderingSystem.Account
         AccountTableDatabaseController adc = new AccountTableDatabaseController();
         ImageLibrary imgLib = new ImageLibrary();
         String imageLocation = "";
+        
         public Register()
         {
             InitializeComponent();
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+            customerTypeComboBox.SelectedIndex = 0;
         }
 
         private void customerPictureBox_DoubleClick(object sender, EventArgs e)
@@ -42,27 +48,51 @@ namespace OrderingSystem.Account
                 MessageBox.Show(openFileDialogException.Message);
             }   
         }
+
         //TODO: Add error-checking.
         private void registerBtn_Click(object sender, EventArgs e)
         {
-            String username = usernameTextBox.Text;
-            String password = passwordTextBox.Text;
-            String fullName = fullnameTextBox.Text;
-            String customerType = customerTypeComboBox.Text;
-            int confirm = adc.checkIfUsernameExists(username);
-            if (confirm > 0)
+            try
             {
-                MessageBox.Show("Username already exists!");
-                usernameTextBox.Text = "";
+                int userId = generateCustomerId();
+                String username = usernameTextBox.Text;
+                String password = passwordTextBox.Text;
+                String fullName = fullnameTextBox.Text;
+                String customerType = customerTypeComboBox.Text;
+                int confirm = adc.checkIfUsernameExists(username);
+                if (confirm > 0)
+                {
+                    MessageBox.Show("Username already exists!");
+                    usernameTextBox.Text = "";
+                }
+                else
+                {
+                    byte[] customerImage;
+                    //This is temporary. A default image will be added and this message will not be needed.
+                    if (imageLocation == "")
+                    {
+                        MessageBox.Show("Please add a profile picture!");
+                    }
+                    else
+                    {
+                        customerImage = imgLib.addImage(imageLocation);
+                        adc.addUser(userId, username, password);
+                        cdc.addUserInfo(userId, customerImage, fullName, customerType);
+                        MessageBox.Show("Successfully Registered!");
+                    }
+                   
+                }
             }
-            else
+            catch (Exception registrationException)
             {
-                byte[] image = imgLib.addImage(imageLocation);
-                adc.addUser(username, password);
-                cdc.addUserInfo(image, fullName, customerType);
-                MessageBox.Show("Successfully Registered!");
-            }            
+                MessageBox.Show(registrationException.Message);
+            }
         }
-       
+        
+        private int generateCustomerId()
+        {
+            Random rnd = new Random();
+            return rnd.Next(111111, 999999);
+        }
     }
 }

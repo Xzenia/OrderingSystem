@@ -45,8 +45,7 @@
             // 
             this.customerPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.customerPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customerPictureBox.Image = global::OrderingSystem.resource.defaultPicture;
-            this.customerPictureBox.InitialImage = global::OrderingSystem.resource.defaultPicture;
+            this.customerPictureBox.Image = global::OrderingSystem.Resources.defaultImage;
             this.customerPictureBox.Location = new System.Drawing.Point(134, 12);
             this.customerPictureBox.Name = "customerPictureBox";
             this.customerPictureBox.Size = new System.Drawing.Size(150, 150);
@@ -82,6 +81,7 @@
             // 
             // customerTypeComboBox
             // 
+            this.customerTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.customerTypeComboBox.FormattingEnabled = true;
             this.customerTypeComboBox.Items.AddRange(new object[] {
             "Regular",
@@ -153,6 +153,7 @@
             this.MinimizeBox = false;
             this.Name = "Register";
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

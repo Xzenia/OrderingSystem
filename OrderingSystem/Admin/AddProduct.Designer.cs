@@ -47,11 +47,11 @@
             // 
             this.productPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.productPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.productPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("productPictureBox.Image")));
+            this.productPictureBox.Image = global::OrderingSystem.Resources.defaultImage;
             this.productPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("productPictureBox.InitialImage")));
-            this.productPictureBox.Location = new System.Drawing.Point(158, 48);
+            this.productPictureBox.Location = new System.Drawing.Point(126, 12);
             this.productPictureBox.Name = "productPictureBox";
-            this.productPictureBox.Size = new System.Drawing.Size(105, 104);
+            this.productPictureBox.Size = new System.Drawing.Size(150, 150);
             this.productPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.productPictureBox.TabIndex = 15;
             this.productPictureBox.TabStop = false;
@@ -64,7 +64,7 @@
             this.productCategoryComboBox.Items.AddRange(new object[] {
             "Food",
             "Drink"});
-            this.productCategoryComboBox.Location = new System.Drawing.Point(126, 304);
+            this.productCategoryComboBox.Location = new System.Drawing.Point(126, 327);
             this.productCategoryComboBox.Name = "productCategoryComboBox";
             this.productCategoryComboBox.Size = new System.Drawing.Size(195, 21);
             this.productCategoryComboBox.TabIndex = 14;
@@ -72,7 +72,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 307);
+            this.label4.Location = new System.Drawing.Point(32, 330);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 13);
             this.label4.TabIndex = 9;
@@ -81,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 262);
+            this.label3.Location = new System.Drawing.Point(32, 285);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(81, 13);
             this.label3.TabIndex = 10;
@@ -90,7 +90,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 218);
+            this.label2.Location = new System.Drawing.Point(32, 241);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 13);
             this.label2.TabIndex = 11;
@@ -98,7 +98,7 @@
             // 
             // productStockField
             // 
-            this.productStockField.Location = new System.Drawing.Point(126, 259);
+            this.productStockField.Location = new System.Drawing.Point(126, 282);
             this.productStockField.Name = "productStockField";
             this.productStockField.Size = new System.Drawing.Size(195, 20);
             this.productStockField.TabIndex = 6;
@@ -115,7 +115,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 177);
+            this.label1.Location = new System.Drawing.Point(32, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 13;
@@ -123,21 +123,21 @@
             // 
             // productPriceField
             // 
-            this.productPriceField.Location = new System.Drawing.Point(126, 215);
+            this.productPriceField.Location = new System.Drawing.Point(126, 238);
             this.productPriceField.Name = "productPriceField";
             this.productPriceField.Size = new System.Drawing.Size(195, 20);
             this.productPriceField.TabIndex = 7;
             // 
             // productNameField
             // 
-            this.productNameField.Location = new System.Drawing.Point(126, 174);
+            this.productNameField.Location = new System.Drawing.Point(126, 197);
             this.productNameField.Name = "productNameField";
             this.productNameField.Size = new System.Drawing.Size(195, 20);
             this.productNameField.TabIndex = 8;
             // 
             // AddBtn
             // 
-            this.AddBtn.Location = new System.Drawing.Point(126, 360);
+            this.AddBtn.Location = new System.Drawing.Point(126, 386);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(120, 34);
             this.AddBtn.TabIndex = 17;
