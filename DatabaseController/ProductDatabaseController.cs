@@ -30,6 +30,14 @@ namespace DatabaseController
         
         }
 
+        public Boolean deleteProduct(int productId)
+        {
+            SqlCommand cmd = new SqlCommand("SP_DELETEPRODUCTDATA", connect);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ProductId", productId);
+            return executeQuery(cmd);
+        }
+
         //Accomodates all SELECT * FROM stored procedures.
         
         public DataSet viewAllData(string storedProcedure)

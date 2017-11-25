@@ -41,6 +41,7 @@
             this.customerListGridView.AllowUserToAddRows = false;
             this.customerListGridView.AllowUserToDeleteRows = false;
             this.customerListGridView.AllowUserToResizeRows = false;
+            this.customerListGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.customerListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customerListGridView.Location = new System.Drawing.Point(12, 12);
             this.customerListGridView.MultiSelect = false;

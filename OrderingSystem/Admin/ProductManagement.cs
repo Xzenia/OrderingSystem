@@ -75,10 +75,11 @@ namespace OrderingSystem.Admin
                 MessageBox.Show("One or multiple fields contain invalid characters!");
             }
         }
-
+        //TODO: Make sure the textfields and the picturebox become empty after deletion.
         private void deleteBtn_Click(object sender, EventArgs e)
         {
-
+            pdc.deleteProduct(Convert.ToInt32(productIdField.Text));
+            loadDatabase();
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
