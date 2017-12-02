@@ -13,7 +13,9 @@ namespace DatabaseController
     {
         HashPassword sec = new HashPassword();
         Guid userGuid = System.Guid.NewGuid();
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Aaron Miguel\Documents\Programming Mindfuckery\C# Bizarre Adventures\OrderingSystem\OrderingSystem\Database\ProgramDatabase.mdf';Integrated Security=True");
+        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Aaron Miguel\Documents\Programming Mindfuckery\C# Bizarre Adventures\OrderingSystem\DatabaseController\Database\ProgramDatabase.mdf';Integrated Security=True");
+        public string dbUserType = "Regular";
+        public int dbUserId = 0;
 
         public Boolean addUser(int userId, string username, string password)
         {
@@ -29,6 +31,8 @@ namespace DatabaseController
                 return executeQuery(cmd);
             }
         }
+
+
 
         public int checkIfUsernameExists(string username)
         {
@@ -60,6 +64,7 @@ namespace DatabaseController
                     dbUsername = Convert.ToString(dataReader["UsernameField"]);
                     dbPassword = Convert.ToString(dataReader["PasswordField"]);
                     dbUserguid = Convert.ToString(dataReader["userGuid"]);
+                    dbUserType = Convert.ToString(dataReader["AccountType"]);
                 }
                 connect.Close();
                 string hashedPassword = sec.HashSHA256(password + dbUserguid);

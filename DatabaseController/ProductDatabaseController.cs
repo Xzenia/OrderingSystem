@@ -11,9 +11,9 @@ namespace DatabaseController
 {
     public class ProductDatabaseController
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Aaron Miguel\Documents\Programming Mindfuckery\C# Bizarre Adventures\OrderingSystem\OrderingSystem\Database\ProgramDatabase.mdf';Integrated Security=True");
+        SqlConnection connect = ConstantVariables.connect;
         
-        public Boolean addProduct(byte[] productImage, string productName, double productPrice, int productStock, string productCategory)
+        public Boolean addProduct(byte[] productImage, string productName, double productPrice, string productCategory)
         {
             using (SqlCommand cmd = new SqlCommand("SP_ADDNEWPRODUCTDATA", connect))
             {
@@ -23,7 +23,6 @@ namespace DatabaseController
                 cmd.Parameters.AddWithValue("@ProductId", productId);
                 cmd.Parameters.AddWithValue("@ProductName", productName);
                 cmd.Parameters.AddWithValue("@ProductPrice", productPrice);
-                cmd.Parameters.AddWithValue("@ProductStock", productStock);
                 cmd.Parameters.AddWithValue("@ProductCategory", productCategory);
                 return executeQuery(cmd);
             }
@@ -57,7 +56,7 @@ namespace DatabaseController
             return addsContentToDataSet;
         }
 
-        public Boolean updateProductData(int productId, byte[] productImage, string productName, double productPrice, int productStock, string productCategory)
+        public Boolean updateProductData(int productId, byte[] productImage, string productName, double productPrice, string productCategory)
         {
             using (SqlCommand cmd = new SqlCommand("SP_UPDATEPRODUCTDATA", connect))
             {
@@ -66,7 +65,6 @@ namespace DatabaseController
                 cmd.Parameters.AddWithValue("@ProductId", productId);
                 cmd.Parameters.AddWithValue("@ProductName", productName);
                 cmd.Parameters.AddWithValue("@ProductPrice", productPrice);
-                cmd.Parameters.AddWithValue("@ProductStock", productStock);
                 cmd.Parameters.AddWithValue("@ProductCategory", productCategory);
                 return executeQuery(cmd);
             }

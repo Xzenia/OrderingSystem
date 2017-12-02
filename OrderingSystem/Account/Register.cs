@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using System.Drawing.Drawing2D;
 using System.IO;
 using DatabaseController;
-using OrderingSystem.ImageClass;
+using Admin.ImageClass;
+
 namespace OrderingSystem.Account
 {
     public partial class Register : Form
@@ -49,6 +50,11 @@ namespace OrderingSystem.Account
             }   
         }
 
+        public static void LoginProcess()
+        {
+            Application.Run(new Login());
+        }
+
         //TODO: Add error-checking.
         private void registerBtn_Click(object sender, EventArgs e)
         {
@@ -77,8 +83,12 @@ namespace OrderingSystem.Account
                     {
                         customerImage = imgLib.addImage(imageLocation);
                         adc.addUser(userId, username, password);
-                        cdc.addUserInfo(userId, customerImage, fullName, customerType);
+                        cdc.addUserInfo(userId, customerImage, fullName, username, customerType);
                         MessageBox.Show("Successfully Registered!");
+                        System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(LoginProcess));
+                        thread.Start();
+                        this.Close();
+                            
                     }
                    
                 }
@@ -93,6 +103,13 @@ namespace OrderingSystem.Account
         {
             Random rnd = new Random();
             return rnd.Next(111111, 999999);
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            Login goToLogin = new Login();
+            goToLogin.Show();
+            this.Hide();
         }
     }
 }

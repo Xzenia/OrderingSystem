@@ -38,6 +38,7 @@
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.cancelBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,7 +46,7 @@
             // 
             this.customerPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.customerPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customerPictureBox.Image = global::OrderingSystem.Resources.defaultImage;
+            this.customerPictureBox.Image = global::OrderingSystem.Properties.Resources.defaultImage;
             this.customerPictureBox.Location = new System.Drawing.Point(134, 12);
             this.customerPictureBox.Name = "customerPictureBox";
             this.customerPictureBox.Size = new System.Drawing.Size(150, 150);
@@ -93,7 +94,7 @@
             // 
             // registerBtn
             // 
-            this.registerBtn.Location = new System.Drawing.Point(150, 385);
+            this.registerBtn.Location = new System.Drawing.Point(60, 387);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(109, 35);
             this.registerBtn.TabIndex = 4;
@@ -134,12 +135,23 @@
             this.passwordTextBox.Size = new System.Drawing.Size(276, 20);
             this.passwordTextBox.TabIndex = 5;
             // 
+            // cancelBtn
+            // 
+            this.cancelBtn.Location = new System.Drawing.Point(215, 387);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(109, 35);
+            this.cancelBtn.TabIndex = 4;
+            this.cancelBtn.Text = "Cancel";
+            this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(410, 453);
             this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.customerTypeComboBox);
             this.Controls.Add(this.label2);
@@ -172,5 +184,6 @@
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox passwordTextBox;
+        private System.Windows.Forms.Button cancelBtn;
     }
 }

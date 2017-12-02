@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.passwordField = new System.Windows.Forms.MaskedTextBox();
             this.loginBtn = new System.Windows.Forms.Button();
+            this.registerBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -70,7 +71,7 @@
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(103, 249);
+            this.loginBtn.Location = new System.Drawing.Point(28, 250);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(131, 37);
             this.loginBtn.TabIndex = 3;
@@ -78,11 +79,22 @@
             this.loginBtn.UseVisualStyleBackColor = true;
             this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
+            // registerBtn
+            // 
+            this.registerBtn.Location = new System.Drawing.Point(183, 250);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(131, 37);
+            this.registerBtn.TabIndex = 3;
+            this.registerBtn.Text = "Register";
+            this.registerBtn.UseVisualStyleBackColor = true;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(353, 339);
+            this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.loginBtn);
             this.Controls.Add(this.passwordField);
             this.Controls.Add(this.label2);
@@ -104,5 +116,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.MaskedTextBox passwordField;
         private System.Windows.Forms.Button loginBtn;
+        private System.Windows.Forms.Button registerBtn;
     }
 }
