@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using DatabaseController;
-using Admin.Global;
 using ProgramLibrary.Data;
 using Admin.ImageClass;
 
@@ -107,7 +106,7 @@ namespace Admin
                 case "addBtn":
                     cbxProductManager.Text = "Add a New Product";
                     AddProduct goToAddProduct = new AddProduct();
-                    GlobalClass.CheckMdiChildren(goToAddProduct);
+                    goToAddProduct.Show();
                     break;
                 
                 case "deleteBtn":

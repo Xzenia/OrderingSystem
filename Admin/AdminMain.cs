@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Admin.Global;
 using DatabaseController;
 
 namespace Admin
@@ -19,20 +18,64 @@ namespace Admin
             InitializeComponent();
         }
 
-        private void productInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnClick(object sender, EventArgs e)
         {
-            ProductManagement goToProductManagement = new ProductManagement();
-            GlobalClass.CheckMdiChildren(goToProductManagement);
+            Button btn = sender as Button;
+            string sbtn = btn.Name;
+
+            switch (sbtn)
+            {
+                case "addProductBtn":
+                    AddProduct goToOrder = new AddProduct();
+                    goToOrder.Show();
+                    break;
+                case "manageProductsBtn":
+                    ProductManagement goToProductManagement = new ProductManagement();
+                    goToProductManagement.Show();
+                    break;
+                default:
+                    MessageBox.Show("Something went wrong!");
+                    break;
+            }
         }
 
-        private void viewCustomersToolStripMenuItem_Click(object sender, EventArgs e)
+        public void accountManagement(object sender, EventArgs e)
         {
-            CustomerList goToCustomerList = new CustomerList();
-            GlobalClass.CheckMdiChildren(goToCustomerList);
+            Button btn = sender as Button;
+            string sbtn = btn.Name;
+
+            switch (sbtn)
+            {
+                case "addUserBtn":
+                    break;
+                case "manageUserBtn":
+                    CustomerList goToCustomerList = new CustomerList();
+                    goToCustomerList.Show();
+                    break;
+                default:
+                    MessageBox.Show("Something went wrong!");
+                    break;
+            }
         }
 
-        private void AdminMain_Load(object sender, EventArgs e)
+
+
+        private void btnExit_Click(object sender, EventArgs e)
         {
+            this.Close();
         }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Minimized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
     }
 }
