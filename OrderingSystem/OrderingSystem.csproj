@@ -59,76 +59,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Account\Register.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Account\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\AddProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\AddProduct.Designer.cs">
-      <DependentUpon>AddProduct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\CustomerList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\CustomerList.Designer.cs">
-      <DependentUpon>CustomerList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\ProductManagement.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\ProductManagement.Designer.cs">
-      <DependentUpon>ProductManagement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Global\GlobalClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="resource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>resource.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Account\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Account\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\AddProduct.resx">
-      <DependentUpon>AddProduct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\CustomerList.resx">
-      <DependentUpon>CustomerList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\ProductManagement.resx">
-      <DependentUpon>ProductManagement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="resource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -139,17 +102,47 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="User\" />
+    <Folder Include="Resources\Product_Pictures\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\ProgramDatabase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Database\ProgramDatabase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>ProgramDatabase.mdf</DependentUpon>
-    </Content>
-    <None Include="Resources\defaultPicture.jpg" />
+    <Content Include="Resources\basilpesto.jpg" />
+    <Content Include="Resources\bolognesandwich.jpg" />
+    <Content Include="Resources\brambleberrypie.jpg" />
+    <Content Include="Resources\cappuccino.jpg" />
+    <Content Include="Resources\chickenpie.jpg" />
+    <Content Include="Resources\Coffee.jpg" />
+    <Content Include="Resources\coffee2.jpg" />
+    <Content Include="Resources\coffee21.jpg" />
+    <Content Include="Resources\coffee3.jpg" />
+    <Content Include="Resources\coffee31.jpg" />
+    <Content Include="Resources\coffeelogo.png" />
+    <None Include="Resources\defaultImage.bmp" />
+    <Content Include="Resources\defaultPicture.jpg" />
+    <Content Include="Resources\ic_add_a_photo_white_24dp_1x.png" />
+    <Content Include="Resources\ic_add_a_photo_white_24dp_2x.png" />
+    <Content Include="Resources\ic_add_circle_white_24dp_1x.png" />
+    <Content Include="Resources\ic_add_circle_white_24dp_2x.png" />
+    <Content Include="Resources\ic_add_shopping_cart_white_24dp_1x.png" />
+    <Content Include="Resources\ic_add_shopping_cart_white_24dp_2x.png" />
+    <Content Include="Resources\ic_add_white_24dp_1x.png" />
+    <Content Include="Resources\ic_add_white_24dp_2x.png" />
+    <Content Include="Resources\ic_credit_card_white_24dp_1x.png" />
+    <Content Include="Resources\ic_credit_card_white_24dp_2x.png" />
+    <Content Include="Resources\ic_exit_to_app_white_24dp_1x.png" />
+    <Content Include="Resources\ic_exit_to_app_white_24dp_2x.png" />
+    <Content Include="Resources\ic_face_black_24dp_1x.png" />
+    <Content Include="Resources\ic_face_black_24dp_2x.png" />
+    <Content Include="Resources\ic_history_white_24dp_1x.png" />
+    <Content Include="Resources\ic_history_white_24dp_2x.png" />
+    <Content Include="Resources\ic_local_drink_white_24dp_1x.png" />
+    <Content Include="Resources\ic_local_drink_white_24dp_2x.png" />
+    <Content Include="Resources\ic_local_pizza_white_24dp_1x.png" />
+    <Content Include="Resources\ic_local_pizza_white_24dp_2x.png" />
+    <Content Include="Resources\ic_perm_identity_white_24dp_1x.png" />
+    <Content Include="Resources\ic_perm_identity_white_24dp_2x.png" />
+    <Content Include="Resources\ic_person_add_white_24dp_1x.png" />
+    <Content Include="Resources\ic_person_add_white_24dp_2x.png" />
+    <None Include="Resources\defaultImage.jpg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -169,9 +162,21 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Admin\Admin.csproj">
+      <Project>{ef3cc36d-0b6b-4863-afda-7d45a415ff2b}</Project>
+      <Name>Admin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DatabaseController\DatabaseController.csproj">
       <Project>{800afa9e-ceb5-42e3-b13f-80cde1e5cd65}</Project>
       <Name>DatabaseController</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProgramLibrary\ProgramLibrary.csproj">
+      <Project>{0292fb69-a259-4f44-85bf-a3627bc60c7d}</Project>
+      <Name>ProgramLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\User\User.csproj">
+      <Project>{4a3eeb30-c85e-4266-a220-799ee7b388b8}</Project>
+      <Name>User</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

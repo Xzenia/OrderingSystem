@@ -11,21 +11,30 @@ namespace DatabaseController
 {
     public class ProductDatabaseController
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Aaron Miguel\Documents\Programming Mindfuckery\C# Bizarre Adventures\OrderingSystem\OrderingSystem\Database\ProgramDatabase.mdf';Integrated Security=True");
+        SqlConnection connect = ConstantVariables.connect;
         
-        public Boolean addProduct(byte[] image, string productName, double productPrice, int productStock, string productCategory)
+        public Boolean addProduct(byte[] productImage, string productName, double productPrice, string productCategory)
         {
-            SqlCommand cmd = new SqlCommand("SP_ADDNEWPRODUCTDATA", connect);
+            using (SqlCommand cmd = new SqlCommand("SP_ADDNEWPRODUCTDATA", connect))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                int productId = generateProductId();
+                cmd.Parameters.AddWithValue("@ProductImage", productImage);
+                cmd.Parameters.AddWithValue("@ProductId", productId);
+                cmd.Parameters.AddWithValue("@ProductName", productName);
+                cmd.Parameters.AddWithValue("@ProductPrice", productPrice);
+                cmd.Parameters.AddWithValue("@ProductCategory", productCategory);
+                return executeQuery(cmd);
+            }
+        
+        }
+
+        public Boolean deleteProduct(int productId)
+        {
+            SqlCommand cmd = new SqlCommand("SP_DELETEPRODUCTDATA", connect);
             cmd.CommandType = CommandType.StoredProcedure;
-            int productId = generateProductId();
             cmd.Parameters.AddWithValue("@ProductId", productId);
-            cmd.Parameters.AddWithValue("@ProductName", productName);
-            cmd.Parameters.AddWithValue("@ProductPrice", productPrice);
-            cmd.Parameters.AddWithValue("@ProductStock", productStock);
-            cmd.Parameters.AddWithValue("@ProductCategory", productCategory);
-            cmd.Parameters.AddWithValue("@ProductImage", image);
-            executeQuery(cmd);
-            return true;
+            return executeQuery(cmd);
         }
 
         //Accomodates all SELECT * FROM stored procedures.
@@ -45,6 +54,20 @@ namespace DatabaseController
             cmd.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter addsContentToDataSet = new SqlDataAdapter(cmd);
             return addsContentToDataSet;
+        }
+
+        public Boolean updateProductData(int productId, byte[] productImage, string productName, double productPrice, string productCategory)
+        {
+            using (SqlCommand cmd = new SqlCommand("SP_UPDATEPRODUCTDATA", connect))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ProductImage", productImage);
+                cmd.Parameters.AddWithValue("@ProductId", productId);
+                cmd.Parameters.AddWithValue("@ProductName", productName);
+                cmd.Parameters.AddWithValue("@ProductPrice", productPrice);
+                cmd.Parameters.AddWithValue("@ProductCategory", productCategory);
+                return executeQuery(cmd);
+            }
         }
 
         private int generateProductId()

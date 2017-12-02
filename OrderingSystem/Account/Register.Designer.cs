@@ -33,11 +33,12 @@
             this.fullnameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.customerTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.registerBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.cancelBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,12 +46,11 @@
             // 
             this.customerPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.customerPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.customerPictureBox.Image = global::OrderingSystem.resource.defaultPicture;
-            this.customerPictureBox.InitialImage = global::OrderingSystem.resource.defaultPicture;
+            this.customerPictureBox.Image = global::OrderingSystem.Properties.Resources.defaultImage;
             this.customerPictureBox.Location = new System.Drawing.Point(134, 12);
             this.customerPictureBox.Name = "customerPictureBox";
             this.customerPictureBox.Size = new System.Drawing.Size(150, 150);
-            this.customerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.customerPictureBox.TabIndex = 0;
             this.customerPictureBox.TabStop = false;
             this.customerPictureBox.DoubleClick += new System.EventHandler(this.customerPictureBox_DoubleClick);
@@ -82,6 +82,7 @@
             // 
             // customerTypeComboBox
             // 
+            this.customerTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.customerTypeComboBox.FormattingEnabled = true;
             this.customerTypeComboBox.Items.AddRange(new object[] {
             "Regular",
@@ -91,14 +92,15 @@
             this.customerTypeComboBox.Size = new System.Drawing.Size(277, 21);
             this.customerTypeComboBox.TabIndex = 3;
             // 
-            // button1
+            // registerBtn
             // 
-            this.button1.Location = new System.Drawing.Point(150, 385);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 35);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = true;
+            this.registerBtn.Location = new System.Drawing.Point(60, 387);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(109, 35);
+            this.registerBtn.TabIndex = 4;
+            this.registerBtn.Text = "Register";
+            this.registerBtn.UseVisualStyleBackColor = true;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
             // label3
             // 
@@ -133,13 +135,24 @@
             this.passwordTextBox.Size = new System.Drawing.Size(276, 20);
             this.passwordTextBox.TabIndex = 5;
             // 
+            // cancelBtn
+            // 
+            this.cancelBtn.Location = new System.Drawing.Point(215, 387);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(109, 35);
+            this.cancelBtn.TabIndex = 4;
+            this.cancelBtn.Text = "Cancel";
+            this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(410, 453);
             this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cancelBtn);
+            this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.customerTypeComboBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -152,6 +165,7 @@
             this.MinimizeBox = false;
             this.Name = "Register";
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -165,10 +179,11 @@
         private System.Windows.Forms.TextBox fullnameTextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox customerTypeComboBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button registerBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox passwordTextBox;
+        private System.Windows.Forms.Button cancelBtn;
     }
 }
