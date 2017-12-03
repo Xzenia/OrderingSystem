@@ -17,6 +17,7 @@ namespace Admin
 {
     public partial class AddProduct : Form
     {
+
         ProductDatabaseController pdc = new ProductDatabaseController();
         ProductManagement pm = new ProductManagement();
         ImageLibrary imgLib = new ImageLibrary();
