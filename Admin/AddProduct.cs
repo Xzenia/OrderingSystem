@@ -17,7 +17,6 @@ namespace Admin
 {
     public partial class AddProduct : Form
     {
-
         ProductDatabaseController pdc = new ProductDatabaseController();
         ProductManagement pm = new ProductManagement();
         ImageLibrary imgLib = new ImageLibrary();
@@ -51,9 +50,9 @@ namespace Admin
             catch (Exception openFileDialogException)
             {
                 MessageBox.Show(openFileDialogException.Message);
-            }   
+            }
         }
-        
+
         private void AddBtn_Click(object sender, EventArgs e)
         {
             byte[] productImage;
@@ -88,15 +87,15 @@ namespace Admin
                         else
                         {
                             MessageBox.Show("Data was not sent to database!");
-                        }        
+                        }
                     }
-                    
+
                 }
                 catch (Exception dataException)
                 {
                     MessageBox.Show(dataException.Message);
                 }
-   
+
             }
         }
     }

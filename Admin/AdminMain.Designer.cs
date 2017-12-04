@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMain));
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.changeAccountDetailsBtn = new System.Windows.Forms.Button();
-            this.manageCustomers = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.manageCustomerBtn = new System.Windows.Forms.Button();
             this.addUserBtn = new System.Windows.Forms.Button();
-            this.manageUserBtn = new System.Windows.Forms.Button();
             this.pnlbtm = new System.Windows.Forms.Panel();
             this.SalesLogBtn = new System.Windows.Forms.Button();
             this.SalesReportBtn = new System.Windows.Forms.Button();
@@ -78,6 +78,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(355, 53);
             this.panel1.Name = "panel1";
@@ -88,51 +89,51 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.SaddleBrown;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.changeAccountDetailsBtn);
-            this.panel2.Controls.Add(this.manageCustomers);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.manageCustomerBtn);
             this.panel2.Controls.Add(this.addUserBtn);
-            this.panel2.Controls.Add(this.manageUserBtn);
             this.panel2.Location = new System.Drawing.Point(846, 46);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(302, 446);
             this.panel2.TabIndex = 9;
             // 
-            // changeAccountDetailsBtn
+            // button4
             // 
-            this.changeAccountDetailsBtn.BackColor = System.Drawing.Color.SaddleBrown;
-            this.changeAccountDetailsBtn.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.changeAccountDetailsBtn.FlatAppearance.BorderSize = 2;
-            this.changeAccountDetailsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changeAccountDetailsBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.changeAccountDetailsBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.changeAccountDetailsBtn.Image = global::Admin.Properties.Resources.ic_perm_identity_white_24dp_2x1;
-            this.changeAccountDetailsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.changeAccountDetailsBtn.Location = new System.Drawing.Point(10, 369);
-            this.changeAccountDetailsBtn.Name = "changeAccountDetailsBtn";
-            this.changeAccountDetailsBtn.Size = new System.Drawing.Size(270, 64);
-            this.changeAccountDetailsBtn.TabIndex = 0;
-            this.changeAccountDetailsBtn.Text = "Change Account Details";
-            this.changeAccountDetailsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.changeAccountDetailsBtn.UseVisualStyleBackColor = false;
-            this.changeAccountDetailsBtn.Click += new System.EventHandler(this.accountManagement);
+            this.button4.BackColor = System.Drawing.Color.SaddleBrown;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.button4.FlatAppearance.BorderSize = 2;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.Control;
+            this.button4.Image = global::Admin.Properties.Resources.ic_perm_identity_white_24dp_2x1;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.Location = new System.Drawing.Point(10, 369);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(270, 64);
+            this.button4.TabIndex = 0;
+            this.button4.Text = "Change Account Details";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.accountManagement);
             // 
-            // manageCustomers
+            // manageCustomerBtn
             // 
-            this.manageCustomers.BackColor = System.Drawing.Color.SaddleBrown;
-            this.manageCustomers.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.manageCustomers.FlatAppearance.BorderSize = 2;
-            this.manageCustomers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.manageCustomers.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageCustomers.ForeColor = System.Drawing.SystemColors.Control;
-            this.manageCustomers.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.manageCustomers.Location = new System.Drawing.Point(10, 160);
-            this.manageCustomers.Name = "manageCustomers";
-            this.manageCustomers.Size = new System.Drawing.Size(270, 63);
-            this.manageCustomers.TabIndex = 0;
-            this.manageCustomers.Text = "Manage Customers";
-            this.manageCustomers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.manageCustomers.UseVisualStyleBackColor = false;
-            this.manageCustomers.Click += new System.EventHandler(this.accountManagement);
+            this.manageCustomerBtn.BackColor = System.Drawing.Color.SaddleBrown;
+            this.manageCustomerBtn.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.manageCustomerBtn.FlatAppearance.BorderSize = 2;
+            this.manageCustomerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.manageCustomerBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageCustomerBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.manageCustomerBtn.Image = ((System.Drawing.Image)(resources.GetObject("manageCustomerBtn.Image")));
+            this.manageCustomerBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.manageCustomerBtn.Location = new System.Drawing.Point(10, 109);
+            this.manageCustomerBtn.Name = "manageCustomerBtn";
+            this.manageCustomerBtn.Size = new System.Drawing.Size(270, 63);
+            this.manageCustomerBtn.TabIndex = 0;
+            this.manageCustomerBtn.Text = "Manage Customers";
+            this.manageCustomerBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.manageCustomerBtn.UseVisualStyleBackColor = false;
+            this.manageCustomerBtn.Click += new System.EventHandler(this.accountManagement);
             // 
             // addUserBtn
             // 
@@ -142,6 +143,7 @@
             this.addUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addUserBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addUserBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.addUserBtn.Image = ((System.Drawing.Image)(resources.GetObject("addUserBtn.Image")));
             this.addUserBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.addUserBtn.Location = new System.Drawing.Point(10, 22);
             this.addUserBtn.Name = "addUserBtn";
@@ -151,24 +153,6 @@
             this.addUserBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.addUserBtn.UseVisualStyleBackColor = false;
             this.addUserBtn.Click += new System.EventHandler(this.accountManagement);
-            // 
-            // manageUserBtn
-            // 
-            this.manageUserBtn.BackColor = System.Drawing.Color.SaddleBrown;
-            this.manageUserBtn.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.manageUserBtn.FlatAppearance.BorderSize = 2;
-            this.manageUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.manageUserBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.manageUserBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.manageUserBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.manageUserBtn.Location = new System.Drawing.Point(10, 91);
-            this.manageUserBtn.Name = "manageUserBtn";
-            this.manageUserBtn.Size = new System.Drawing.Size(270, 63);
-            this.manageUserBtn.TabIndex = 0;
-            this.manageUserBtn.Text = "Manage Users";
-            this.manageUserBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.manageUserBtn.UseVisualStyleBackColor = false;
-            this.manageUserBtn.Click += new System.EventHandler(this.accountManagement);
             // 
             // pnlbtm
             // 
@@ -181,7 +165,7 @@
             this.pnlbtm.Controls.Add(this.manageProductsBtn);
             this.pnlbtm.Location = new System.Drawing.Point(11, 46);
             this.pnlbtm.Name = "pnlbtm";
-            this.pnlbtm.Size = new System.Drawing.Size(290, 382);
+            this.pnlbtm.Size = new System.Drawing.Size(291, 379);
             this.pnlbtm.TabIndex = 9;
             // 
             // SalesLogBtn
@@ -192,6 +176,7 @@
             this.SalesLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SalesLogBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesLogBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.SalesLogBtn.Image = ((System.Drawing.Image)(resources.GetObject("SalesLogBtn.Image")));
             this.SalesLogBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SalesLogBtn.Location = new System.Drawing.Point(10, 22);
             this.SalesLogBtn.Name = "SalesLogBtn";
@@ -210,6 +195,7 @@
             this.SalesReportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SalesReportBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalesReportBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.SalesReportBtn.Image = ((System.Drawing.Image)(resources.GetObject("SalesReportBtn.Image")));
             this.SalesReportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.SalesReportBtn.Location = new System.Drawing.Point(10, 91);
             this.SalesReportBtn.Name = "SalesReportBtn";
@@ -266,6 +252,7 @@
             this.manageProductsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.manageProductsBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.manageProductsBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.manageProductsBtn.Image = ((System.Drawing.Image)(resources.GetObject("manageProductsBtn.Image")));
             this.manageProductsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.manageProductsBtn.Location = new System.Drawing.Point(10, 299);
             this.manageProductsBtn.Name = "manageProductsBtn";
@@ -391,8 +378,7 @@
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AdminMain";
+            this.Text = "AdminControl";
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -419,14 +405,13 @@
         private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button changeAccountDetailsBtn;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button orderHistoryBtn;
         private System.Windows.Forms.Button SalesLogBtn;
         private System.Windows.Forms.Button SalesReportBtn;
         private System.Windows.Forms.Button addUserBtn;
-        private System.Windows.Forms.Button manageUserBtn;
         private System.Windows.Forms.Panel pnlbtm;
-        private System.Windows.Forms.Button manageCustomers;
+        private System.Windows.Forms.Button manageCustomerBtn;
         private System.Windows.Forms.Button addProductBtn;
         private System.Windows.Forms.Button manageProductsBtn;
     }

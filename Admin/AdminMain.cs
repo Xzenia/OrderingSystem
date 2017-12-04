@@ -48,7 +48,7 @@ namespace Admin
             {
                 case "addUserBtn":
                     break;
-                case "manageUserBtn":
+                case "manageCustomerBtn":
                     CustomerList goToCustomerList = new CustomerList();
                     goToCustomerList.Show();
                     break;
