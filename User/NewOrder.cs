@@ -43,10 +43,26 @@ namespace User
             {
                 if (e.RowIndex >= 0)
                 {
+                    
                     DataGridViewRow row = this.productListGridView.Rows[e.RowIndex];
                     String productName = row.Cells[1].Value.ToString();
                     double productPrice = Convert.ToDouble(row.Cells[2].Value.ToString());
-                    orders.Rows.Add(productName, productPrice);
+                    
+                    Boolean ifItDoesNotExist = true;
+                    foreach (DataRow dr in orders.Rows)
+                    {
+                        if (dr["Item Name"].Equals(productName))
+                        {
+                            dr["Item Quantity"] = Convert.ToInt32(dr["Item Quantity"]) + 1;
+                            ifItDoesNotExist = false;
+                        }
+                    }
+                    if (ifItDoesNotExist)
+                    {
+                        int productQuantity = 1;
+                        orders.Rows.Add(productName, productPrice, productQuantity);
+                    }
+                    
 
                 }
             }
@@ -55,6 +71,16 @@ namespace User
                 MessageBox.Show("Error! Row is null! "+NullRowException.Message);
             }
         }
+
+
+        private void orderDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+             if (e.RowIndex >= 0)
+             {
+                 orders.Rows.RemoveAt(e.RowIndex);
+             }
+        }
+
 
         private void btnClick(object sender, EventArgs e)
         {
@@ -67,7 +93,7 @@ namespace User
                     acceptOrder();
                     break;
                 case "btnCancel":
-                    cancelOrder();
+                    clearOrderList();
                     break;
                 
                 default:
@@ -78,8 +104,10 @@ namespace User
 
         private void setupOrderDataGridView()
         {
-            orders.Columns.Add(new DataColumn("Product Name"));
-            orders.Columns.Add(new DataColumn("Product Cost"));
+            orders.Columns.Add(new DataColumn("Item Name"));
+            orders.Columns.Add(new DataColumn("Item Cost"));
+            orders.Columns.Add(new DataColumn("Item Quantity"));
+            orders.Columns["Item Quantity"].DefaultValue = 0;
             orderDataGridView.DataSource = orders;
         }
 
@@ -98,9 +126,12 @@ namespace User
             final.Columns.Add("CustomerName", typeof(string));
             final.Columns.Add("CustomerType", typeof(string));
             final.Columns.Add("ItemOrdered", typeof(string));
+            final.Columns.Add("ItemQuantity", typeof(int));
             final.Columns.Add("ItemPrice", typeof(double));
             final.Columns.Add("TotalCost", typeof(double));
-            
+            final.Columns.Add("DateOrdered", typeof(string));
+            final.Columns.Add("TimeOrdered", typeof(string));
+           
             Random rnd = new Random();
             double totalCost = 0;
             cookie.readFile();
@@ -117,8 +148,11 @@ namespace User
                 int orderId = rnd.Next(111111, 999999);
                 string productName = Convert.ToString(orders.Rows[count].ItemArray[0]);
                 double productCost = Convert.ToDouble(orders.Rows[count].ItemArray[1]);
-                
-                final.Rows.Add(orderId, customerId, customerName, customerType, productName, productCost, totalCost);
+                int productQuantity = Convert.ToInt32(orders.Rows[count].ItemArray[2]);
+                String dateOrdered = DateTime.Now.ToString("MM/dd/yyyy");
+                String timeOrdered = DateTime.Now.ToString("hh:mm");
+                final.Rows.Add(orderId, customerId, customerName, customerType, productName, productQuantity, productCost, totalCost, dateOrdered, timeOrdered);
+
             }
             try
             {
@@ -126,6 +160,7 @@ namespace User
                 if (confirm)
                 {
                     MessageBox.Show("Order sent!");
+                    clearOrderList();
                 }
                 else
                 {
@@ -139,7 +174,7 @@ namespace User
         }
 
 
-        private void cancelOrder()
+        private void clearOrderList()
         {
             orders.Rows.Clear();
         }

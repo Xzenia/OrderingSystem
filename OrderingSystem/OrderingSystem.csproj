@@ -163,7 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Admin\Admin.csproj">
-      <Project>{ef3cc36d-0b6b-4863-afda-7d45a415ff2b}</Project>
+      <Project>{cec3095e-ed53-488c-bb1d-0345bbb0d9d5}</Project>
       <Name>Admin</Name>
     </ProjectReference>
     <ProjectReference Include="..\DatabaseController\DatabaseController.csproj">

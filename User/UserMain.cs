@@ -78,10 +78,6 @@ namespace User
             }
         }
 
-        private void menuDrag(object sender, EventArgs e)
-        {
-
-        }
         //Contains the custom drag event
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {

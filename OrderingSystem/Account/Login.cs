@@ -74,12 +74,12 @@ namespace OrderingSystem.Account
 
         public static void AdminProcess()
         {
-            Application.Run(new AdminMain());
+            Application.Run(new AdminSplashScreen());
         }
 
         public static void UserProcess()
         {
-            Application.Run(new UserMain());
+            Application.Run(new UserSplashScreen());
         }
 
         private void registerBtn_Click(object sender, EventArgs e)

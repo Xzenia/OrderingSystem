@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using DatabaseController;
-using Admin.Global;
 using ProgramLibrary.Data;
 using Admin.ImageClass;
 
@@ -86,6 +85,7 @@ namespace Admin
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     productPictureBox.ImageLocation = dialog.FileName.ToString();
+                    imageLocation = productPictureBox.ImageLocation;
                 }
             }
             catch (Exception openFileDialogException)
@@ -93,7 +93,7 @@ namespace Admin
                 MessageBox.Show(openFileDialogException.Message);
             }
         }
-
+        //Add delete and refresh buttons
         private void btnClick(object sender, EventArgs e) 
         {
             Button btn = sender as Button;
@@ -107,7 +107,7 @@ namespace Admin
                 case "addBtn":
                     cbxProductManager.Text = "Add a New Product";
                     AddProduct goToAddProduct = new AddProduct();
-                    GlobalClass.CheckMdiChildren(goToAddProduct);
+                    goToAddProduct.Show();
                     break;
                 
                 case "deleteBtn":
@@ -127,14 +127,11 @@ namespace Admin
 
         private void editProduct()
         {
-            byte[] productImage;
-            if (dataChk.checkInputs(productPriceField.Text))
+            AreAnyFieldsEmpty();
+            byte[] productImage = tempImg;
+            if (!AreAnyFieldsEmpty())
             {
-                if (imageLocation == "")
-                {
-                    productImage = tempImg;
-                }
-                else
+                if (imageLocation != null)
                 {
                     productImage = (byte[])imgLib.addImage(imageLocation);
                 }
@@ -155,9 +152,32 @@ namespace Admin
                     MessageBox.Show("Product information was not successfully updated!");
                 }
             }
+        }
+
+        private Boolean AreAnyFieldsEmpty()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = control as TextBox;
+                    if (textBox.Text == string.Empty)
+                    {
+                        MessageBox.Show("One or more fields is empty!");
+                        return true;
+                    }
+                }
+            }
+
+            if (dataChk.checkInputs(productPriceField.Text))
+            {
+                MessageBox.Show("The price textfield contains an invalid character(s)");
+                return false;
+
+            }
             else
             {
-                MessageBox.Show("One or multiple fields contain invalid characters!");
+                return true;
             }
         }
     }

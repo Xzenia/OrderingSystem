@@ -148,6 +148,7 @@
             this.orderDataGridView.ReadOnly = true;
             this.orderDataGridView.Size = new System.Drawing.Size(380, 307);
             this.orderDataGridView.TabIndex = 2;
+            this.orderDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderDataGridView_CellDoubleClick);
             // 
             // orderDateAndTime
             // 

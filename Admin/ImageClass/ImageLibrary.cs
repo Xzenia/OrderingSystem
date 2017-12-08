@@ -42,8 +42,8 @@ namespace Admin.ImageClass
             int originalWidth = bmp.Width;
             int originalHeight = bmp.Height;
 
-            float maxWidth = 150;
-            float maxHeight = 150;
+            float maxWidth = 100;
+            float maxHeight = 100;
 
             //Preserving the aspect ratio
             float ratioX = (float)maxWidth / (float)originalWidth;

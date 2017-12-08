@@ -31,8 +31,6 @@
             this.customerPictureBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.fullnameTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.customerTypeComboBox = new System.Windows.Forms.ComboBox();
             this.registerBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
@@ -71,30 +69,9 @@
             this.fullnameTextBox.Size = new System.Drawing.Size(276, 20);
             this.fullnameTextBox.TabIndex = 2;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 328);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Customer Type: ";
-            // 
-            // customerTypeComboBox
-            // 
-            this.customerTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.customerTypeComboBox.FormattingEnabled = true;
-            this.customerTypeComboBox.Items.AddRange(new object[] {
-            "Regular",
-            "V.I.P"});
-            this.customerTypeComboBox.Location = new System.Drawing.Point(102, 325);
-            this.customerTypeComboBox.Name = "customerTypeComboBox";
-            this.customerTypeComboBox.Size = new System.Drawing.Size(277, 21);
-            this.customerTypeComboBox.TabIndex = 3;
-            // 
             // registerBtn
             // 
-            this.registerBtn.Location = new System.Drawing.Point(60, 387);
+            this.registerBtn.Location = new System.Drawing.Point(67, 350);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(109, 35);
             this.registerBtn.TabIndex = 4;
@@ -137,7 +114,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(215, 387);
+            this.cancelBtn.Location = new System.Drawing.Point(220, 350);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(109, 35);
             this.cancelBtn.TabIndex = 4;
@@ -153,8 +130,6 @@
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.registerBtn);
-            this.Controls.Add(this.customerTypeComboBox);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.label3);
@@ -165,7 +140,6 @@
             this.MinimizeBox = false;
             this.Name = "Register";
             this.Text = "Register";
-            this.Load += new System.EventHandler(this.Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -177,8 +151,6 @@
         private System.Windows.Forms.PictureBox customerPictureBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox fullnameTextBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox customerTypeComboBox;
         private System.Windows.Forms.Button registerBtn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox usernameTextBox;

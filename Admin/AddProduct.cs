@@ -50,9 +50,9 @@ namespace Admin
             catch (Exception openFileDialogException)
             {
                 MessageBox.Show(openFileDialogException.Message);
-            }   
+            }
         }
-        
+
         private void AddBtn_Click(object sender, EventArgs e)
         {
             byte[] productImage;
@@ -64,7 +64,6 @@ namespace Admin
             {
                 try
                 {
-                    //This is temporary. A default image will be added and this message will not be needed.
                     if (imageLocation == "")
                     {
                         MessageBox.Show("Please add an image of the product.");
@@ -87,15 +86,15 @@ namespace Admin
                         else
                         {
                             MessageBox.Show("Data was not sent to database!");
-                        }        
+                        }
                     }
-                    
+
                 }
                 catch (Exception dataException)
                 {
                     MessageBox.Show(dataException.Message);
                 }
-   
+
             }
         }
     }

@@ -45,6 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global\GlobalClass.cs" />
+    <Compile Include="UserSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSplashScreen.designer.cs">
+      <DependentUpon>UserSplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="UserSplashScreen.resx">
+      <DependentUpon>UserSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserMain.resx">
       <DependentUpon>UserMain.cs</DependentUpon>
     </EmbeddedResource>
