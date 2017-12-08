@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.manageCustomerBtn = new System.Windows.Forms.Button();
             this.addUserBtn = new System.Windows.Forms.Button();
             this.pnlbtm = new System.Windows.Forms.Panel();
@@ -52,7 +53,6 @@
             this.mnuLogOut = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuChangeDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlbtm.SuspendLayout();
@@ -117,6 +117,25 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.accountManagement);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.Control;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(10, 205);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(270, 63);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Manage User Accounts";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.accountManagement);
             // 
             // manageCustomerBtn
             // 
@@ -322,6 +341,7 @@
             this.mainMenu.Size = new System.Drawing.Size(1143, 29);
             this.mainMenu.TabIndex = 3;
             this.mainMenu.Text = "menuStrip1";
+            this.mainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             // 
             // mnuFile
             // 
@@ -370,25 +390,6 @@
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             this.systemToolStripMenuItem.Size = new System.Drawing.Size(100, 25);
             this.systemToolStripMenuItem.Text = "Application";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(10, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(270, 63);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Manage User Accounts";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.accountManagement);
             // 
             // AdminMain
             // 
