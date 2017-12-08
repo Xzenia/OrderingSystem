@@ -46,10 +46,25 @@ namespace DatabaseController
             return addsContentToDataSet;
         }
 
-        public Boolean addUserInfo(int customerId, byte[] customerImage, String customerName, String customerUsername, String customerType)
+        public Boolean adminAddUserInfo(int customerId, byte[] customerImage, String customerName, String customerUsername, String customerType)
         {
             using (SqlCommand cmd = new SqlCommand("SP_ADDNEWCUSTOMERDATA", connect))
             {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CustomerId", customerId);
+                cmd.Parameters.AddWithValue("@CustomerImage", customerImage);
+                cmd.Parameters.AddWithValue("@CustomerName", customerName);
+                cmd.Parameters.AddWithValue("@CustomerUsername", customerUsername);
+                cmd.Parameters.AddWithValue("@CustomerType", customerType);
+                return executeQuery(cmd);
+            }
+        }
+
+        public Boolean addUserInfo(int customerId, byte[] customerImage, String customerName, String customerUsername)
+        {
+            using (SqlCommand cmd = new SqlCommand("SP_ADDNEWCUSTOMERDATA", connect))
+            {
+                String customerType = "Regular";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@CustomerId", customerId);
                 cmd.Parameters.AddWithValue("@CustomerImage", customerImage);

@@ -26,11 +26,6 @@ namespace OrderingSystem.Account
             InitializeComponent();
         }
 
-        private void Register_Load(object sender, EventArgs e)
-        {
-            customerTypeComboBox.SelectedIndex = 0;
-        }
-
         private void customerPictureBox_DoubleClick(object sender, EventArgs e)
         {
             try
@@ -64,7 +59,6 @@ namespace OrderingSystem.Account
                 String username = usernameTextBox.Text;
                 String password = passwordTextBox.Text;
                 String fullName = fullnameTextBox.Text;
-                String customerType = customerTypeComboBox.Text;
                 int confirm = adc.checkIfUsernameExists(username);
                 if (confirm > 0)
                 {
@@ -83,16 +77,15 @@ namespace OrderingSystem.Account
                     {
                         customerImage = imgLib.addImage(imageLocation);
                         adc.addUser(userId, username, password);
-                        cdc.addUserInfo(userId, customerImage, fullName, username, customerType);
+                        cdc.addUserInfo(userId, customerImage, fullName, username);
                         MessageBox.Show("Successfully Registered!");
                         System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(LoginProcess));
                         thread.Start();
                         this.Close();
-                            
                     }
-                   
                 }
             }
+
             catch (Exception registrationException)
             {
                 MessageBox.Show(registrationException.Message);

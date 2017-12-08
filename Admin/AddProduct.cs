@@ -64,7 +64,6 @@ namespace Admin
             {
                 try
                 {
-                    //This is temporary. A default image will be added and this message will not be needed.
                     if (imageLocation == "")
                     {
                         MessageBox.Show("Please add an image of the product.");

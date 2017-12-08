@@ -66,6 +66,7 @@ namespace DatabaseController
                 cmd.Parameters.AddWithValue("@ProductName", productName);
                 cmd.Parameters.AddWithValue("@ProductPrice", productPrice);
                 cmd.Parameters.AddWithValue("@ProductCategory", productCategory);
+                
                 return executeQuery(cmd);
             }
         }

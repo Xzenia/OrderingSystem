@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DatabaseController;
-
+using Admin.Reports;
 namespace Admin
 {
     public partial class AdminMain : Form
@@ -33,6 +33,14 @@ namespace Admin
                     ProductManagement goToProductManagement = new ProductManagement();
                     goToProductManagement.Show();
                     break;
+                case "SalesReportBtn":
+                    SalesReport goToSalesReport = new SalesReport();
+                    goToSalesReport.Show();
+                    break;
+                case "orderHistoryBtn":
+                    OrderHistory goToOrderHistory = new OrderHistory();
+                    goToOrderHistory.Show();
+                    break;
                 default:
                     MessageBox.Show("Something went wrong!");
                     break;
@@ -47,6 +55,7 @@ namespace Admin
             switch (sbtn)
             {
                 case "addUserBtn":
+
                     break;
                 case "manageCustomerBtn":
                     CustomerList goToCustomerList = new CustomerList();
@@ -57,8 +66,6 @@ namespace Admin
                     break;
             }
         }
-
-
 
         private void btnExit_Click(object sender, EventArgs e)
         {

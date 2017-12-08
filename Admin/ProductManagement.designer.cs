@@ -30,24 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductManagement));
             this.cbxProductManager = new System.Windows.Forms.GroupBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.productStockField = new System.Windows.Forms.NumericUpDown();
+            this.productNameField = new System.Windows.Forms.TextBox();
+            this.addBtn = new System.Windows.Forms.Button();
             this.productPictureBox = new System.Windows.Forms.PictureBox();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.refreshBtn = new System.Windows.Forms.Button();
             this.editBtn = new System.Windows.Forms.Button();
             this.productPriceField = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.productCategoryComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblprprice = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.productIdField = new System.Windows.Forms.TextBox();
             this.productListGridView = new System.Windows.Forms.DataGridView();
-            this.productNameField = new System.Windows.Forms.TextBox();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.cbxProductManager.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productStockField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productListGridView)).BeginInit();
             this.SuspendLayout();
@@ -56,17 +54,16 @@
             // 
             this.cbxProductManager.BackColor = System.Drawing.Color.Transparent;
             this.cbxProductManager.Controls.Add(this.productNameField);
-            this.cbxProductManager.Controls.Add(this.btnCancel);
-            this.cbxProductManager.Controls.Add(this.productStockField);
+            this.cbxProductManager.Controls.Add(this.deleteBtn);
+            this.cbxProductManager.Controls.Add(this.addBtn);
             this.cbxProductManager.Controls.Add(this.productPictureBox);
-            this.cbxProductManager.Controls.Add(this.btnReset);
+            this.cbxProductManager.Controls.Add(this.refreshBtn);
             this.cbxProductManager.Controls.Add(this.editBtn);
             this.cbxProductManager.Controls.Add(this.productPriceField);
             this.cbxProductManager.Controls.Add(this.label1);
             this.cbxProductManager.Controls.Add(this.productCategoryComboBox);
             this.cbxProductManager.Controls.Add(this.label5);
             this.cbxProductManager.Controls.Add(this.label4);
-            this.cbxProductManager.Controls.Add(this.label6);
             this.cbxProductManager.Controls.Add(this.lblprprice);
             this.cbxProductManager.Controls.Add(this.label2);
             this.cbxProductManager.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,27 +75,28 @@
             this.cbxProductManager.TabStop = false;
             this.cbxProductManager.Text = "Manage Product";
             // 
-            // btnCancel
+            // productNameField
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Firebrick;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.SeaShell;
-            this.btnCancel.Location = new System.Drawing.Point(530, 166);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(145, 39);
-            this.btnCancel.TabIndex = 16;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
+            this.productNameField.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productNameField.Location = new System.Drawing.Point(492, 32);
+            this.productNameField.Name = "productNameField";
+            this.productNameField.Size = new System.Drawing.Size(183, 33);
+            this.productNameField.TabIndex = 17;
             // 
-            // productStockField
+            // addBtn
             // 
-            this.productStockField.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productStockField.Location = new System.Drawing.Point(180, 165);
-            this.productStockField.Name = "productStockField";
-            this.productStockField.Size = new System.Drawing.Size(105, 33);
-            this.productStockField.TabIndex = 0;
+            this.addBtn.BackColor = System.Drawing.Color.Chocolate;
+            this.addBtn.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
+            this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.ForeColor = System.Drawing.Color.SeaShell;
+            this.addBtn.Location = new System.Drawing.Point(274, 165);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(122, 39);
+            this.addBtn.TabIndex = 16;
+            this.addBtn.Text = "Add";
+            this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.btnClick);
             // 
             // productPictureBox
             // 
@@ -114,19 +112,19 @@
             this.productPictureBox.TabStop = false;
             this.productPictureBox.DoubleClick += new System.EventHandler(this.productPictureBox_DoubleClick);
             // 
-            // btnReset
+            // refreshBtn
             // 
-            this.btnReset.BackColor = System.Drawing.Color.Firebrick;
-            this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(306, 166);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(97, 39);
-            this.btnReset.TabIndex = 4;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btnClick);
+            this.refreshBtn.BackColor = System.Drawing.Color.Chocolate;
+            this.refreshBtn.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
+            this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshBtn.Location = new System.Drawing.Point(13, 165);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(109, 39);
+            this.refreshBtn.TabIndex = 4;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.UseVisualStyleBackColor = false;
+            this.refreshBtn.Click += new System.EventHandler(this.btnClick);
             // 
             // editBtn
             // 
@@ -134,7 +132,7 @@
             this.editBtn.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.Location = new System.Drawing.Point(409, 165);
+            this.editBtn.Location = new System.Drawing.Point(137, 165);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(115, 39);
             this.editBtn.TabIndex = 5;
@@ -196,17 +194,6 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Product Category: ";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(8, 172);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 25);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Product Stock: ";
-            // 
             // lblprprice
             // 
             this.lblprprice.AutoSize = true;
@@ -256,13 +243,20 @@
             this.productListGridView.TabIndex = 0;
             this.productListGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productListGridView_CellClick);
             // 
-            // productNameField
+            // deleteBtn
             // 
-            this.productNameField.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productNameField.Location = new System.Drawing.Point(492, 32);
-            this.productNameField.Name = "productNameField";
-            this.productNameField.Size = new System.Drawing.Size(183, 33);
-            this.productNameField.TabIndex = 17;
+            this.deleteBtn.BackColor = System.Drawing.Color.Firebrick;
+            this.deleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.ForeColor = System.Drawing.Color.SeaShell;
+            this.deleteBtn.Location = new System.Drawing.Point(413, 165);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(122, 39);
+            this.deleteBtn.TabIndex = 16;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.btnClick);
             // 
             // ProductManagement
             // 
@@ -278,7 +272,6 @@
             this.Load += new System.EventHandler(this.ProductManagement_Load);
             this.cbxProductManager.ResumeLayout(false);
             this.cbxProductManager.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productStockField)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productListGridView)).EndInit();
             this.ResumeLayout(false);
@@ -289,7 +282,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox cbxProductManager;
-        private System.Windows.Forms.NumericUpDown productStockField;
         private System.Windows.Forms.PictureBox productPictureBox;
         private System.Windows.Forms.TextBox productIdField;
         private System.Windows.Forms.TextBox productPriceField;
@@ -297,14 +289,14 @@
         private System.Windows.Forms.ComboBox productCategoryComboBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblprprice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView productListGridView;
-        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.Button editBtn;
-        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button addBtn;
         private System.Windows.Forms.TextBox productNameField;
+        private System.Windows.Forms.Button deleteBtn;
 
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.customerListGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
@@ -52,13 +53,15 @@
             this.customerListGridView.AllowUserToAddRows = false;
             this.customerListGridView.AllowUserToDeleteRows = false;
             this.customerListGridView.AllowUserToResizeRows = false;
-            this.customerListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.customerListGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.customerListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.customerListGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.customerListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customerListGridView.Location = new System.Drawing.Point(12, 12);
             this.customerListGridView.MultiSelect = false;
             this.customerListGridView.Name = "customerListGridView";
             this.customerListGridView.ReadOnly = true;
-            this.customerListGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerListGridView.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.customerListGridView.Size = new System.Drawing.Size(750, 233);
             this.customerListGridView.TabIndex = 0;
             // 

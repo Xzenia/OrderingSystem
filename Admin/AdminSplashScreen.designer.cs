@@ -60,7 +60,7 @@
             this.tm.Interval = 32;
             this.tm.Tick += new System.EventHandler(this.tm_Tick);
             // 
-            // SplashScreen
+            // AdminSplashScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -72,7 +72,8 @@
             this.Controls.Add(this.loadBar);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SplashScreen";
+            this.Name = "AdminSplashScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
