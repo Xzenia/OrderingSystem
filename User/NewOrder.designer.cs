@@ -97,7 +97,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(135, 29);
             this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnAccept
             // 
@@ -154,7 +153,6 @@
             this.orderDateAndTime.Name = "orderDateAndTime";
             this.orderDateAndTime.Size = new System.Drawing.Size(228, 29);
             this.orderDateAndTime.TabIndex = 1;
-            this.orderDateAndTime.ValueChanged += new System.EventHandler(this.orderDateAndTime_ValueChanged);
             // 
             // label6
             // 
@@ -166,7 +164,6 @@
             this.label6.Size = new System.Drawing.Size(92, 25);
             this.label6.TabIndex = 0;
             this.label6.Text = "Table No.";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label4
             // 
@@ -178,7 +175,6 @@
             this.label4.Size = new System.Drawing.Size(188, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "Order Date and Time";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 

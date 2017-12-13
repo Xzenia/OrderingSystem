@@ -37,6 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.MaskedTextBox();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.customerBirthdayField = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +73,7 @@
             // 
             // registerBtn
             // 
-            this.registerBtn.Location = new System.Drawing.Point(67, 350);
+            this.registerBtn.Location = new System.Drawing.Point(68, 462);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(109, 35);
             this.registerBtn.TabIndex = 4;
@@ -114,7 +116,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(220, 350);
+            this.cancelBtn.Location = new System.Drawing.Point(220, 462);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(109, 35);
             this.cancelBtn.TabIndex = 4;
@@ -122,11 +124,30 @@
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 333);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Birthday";
+            // 
+            // customerBirthdayField
+            // 
+            this.customerBirthdayField.CustomFormat = "MMMM dd yyyy";
+            this.customerBirthdayField.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.customerBirthdayField.Location = new System.Drawing.Point(102, 327);
+            this.customerBirthdayField.Name = "customerBirthdayField";
+            this.customerBirthdayField.Size = new System.Drawing.Size(276, 20);
+            this.customerBirthdayField.TabIndex = 6;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 453);
+            this.ClientSize = new System.Drawing.Size(430, 522);
+            this.Controls.Add(this.customerBirthdayField);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.registerBtn);
@@ -134,6 +155,7 @@
             this.Controls.Add(this.usernameTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.fullnameTextBox);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.customerPictureBox);
             this.MaximizeBox = false;
@@ -157,5 +179,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox passwordTextBox;
         private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker customerBirthdayField;
     }
 }

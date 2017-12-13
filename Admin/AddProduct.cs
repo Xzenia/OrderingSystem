@@ -58,10 +58,6 @@ namespace Admin
             byte[] productImage;
             if (!AreAnyFieldsEmpty())
             {
-                //DO nothing because the messages are already expressed. 
-            }
-            else
-            {
                 try
                 {
                     if (imageLocation == "")
@@ -94,7 +90,6 @@ namespace Admin
                 {
                     MessageBox.Show(dataException.Message);
                 }
-
             }
         }
 
@@ -112,17 +107,7 @@ namespace Admin
                     }
                 }
             }
-
-            if (dataChk.checkInputs(productPriceField.Text))
-            {
-                MessageBox.Show("The price textfield contains an invalid character(s)");
-                return false;
-
-            }
-            else
-            {
-                return true;
-            }
+            return false;
         }
     }
 }

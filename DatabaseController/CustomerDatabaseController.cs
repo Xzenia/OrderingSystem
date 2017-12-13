@@ -46,31 +46,39 @@ namespace DatabaseController
             return addsContentToDataSet;
         }
 
-        public Boolean adminAddUserInfo(int customerId, byte[] customerImage, String customerName, String customerUsername, String customerType)
+        public Boolean addOrderInfo(DataTable data)
         {
-            using (SqlCommand cmd = new SqlCommand("SP_ADDNEWCUSTOMERDATA", connect))
+            using (SqlBulkCopy bc = new SqlBulkCopy(connect))
             {
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CustomerId", customerId);
-                cmd.Parameters.AddWithValue("@CustomerImage", customerImage);
-                cmd.Parameters.AddWithValue("@CustomerName", customerName);
-                cmd.Parameters.AddWithValue("@CustomerUsername", customerUsername);
-                cmd.Parameters.AddWithValue("@CustomerType", customerType);
-                return executeQuery(cmd);
+                connect.Open();
+                bc.DestinationTableName = "CustomerTable";
+                try
+                {
+                    bc.WriteToServer(data);
+                    connect.Close();
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    connect.Close();
+                    return false;
+                }
             }
         }
 
-        public Boolean addUserInfo(int customerId, byte[] customerImage, String customerName, String customerUsername)
+        public Boolean updateCustomerData(byte[] customerImage, int customerId, String customerName, String customerBirthday, String cellphoneNumber, String email, String membershipType)
         {
-            using (SqlCommand cmd = new SqlCommand("SP_ADDNEWCUSTOMERDATA", connect))
+            using (SqlCommand cmd = new SqlCommand("SP_UPDATECUSTOMERDATA", connect))
             {
-                String customerType = "Regular";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@CustomerId", customerId);
                 cmd.Parameters.AddWithValue("@CustomerImage", customerImage);
+                cmd.Parameters.AddWithValue("@CustomerId", customerId);
+                cmd.Parameters.AddWithValue("@CustomerBirthday", customerBirthday);
                 cmd.Parameters.AddWithValue("@CustomerName", customerName);
-                cmd.Parameters.AddWithValue("@CustomerUsername", customerUsername);
-                cmd.Parameters.AddWithValue("@CustomerType", customerType);
+                cmd.Parameters.AddWithValue("@CustomerEmail", email);
+                cmd.Parameters.AddWithValue("@CustomerCellphoneNumber", cellphoneNumber);
+                cmd.Parameters.AddWithValue("@CustomerType", membershipType);
                 return executeQuery(cmd);
             }
         }

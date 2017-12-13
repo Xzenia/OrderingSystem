@@ -68,7 +68,6 @@ namespace OrderingSystem.Account
                 else
                 {
                     byte[] customerImage;
-                    //This is temporary. A default image will be added and this message will not be needed.
                     if (imageLocation == "")
                     {
                         MessageBox.Show("Please add a profile picture!");
@@ -77,7 +76,7 @@ namespace OrderingSystem.Account
                     {
                         customerImage = imgLib.addImage(imageLocation);
                         adc.addUser(userId, username, password);
-                        cdc.addUserInfo(userId, customerImage, fullName, username);
+                        //cdc.addUserInfo(userId, customerImage, fullName, username);
                         MessageBox.Show("Successfully Registered!");
                         System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(LoginProcess));
                         thread.Start();

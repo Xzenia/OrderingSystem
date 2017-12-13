@@ -44,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.customerNameField = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.customerIdField = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.customerListGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).BeginInit();
@@ -103,6 +104,7 @@
             this.customerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.customerPictureBox.TabIndex = 26;
             this.customerPictureBox.TabStop = false;
+            this.customerPictureBox.DoubleClick += new System.EventHandler(this.customerPictureBox_DoubleClick);
             // 
             // label5
             // 
@@ -245,11 +247,21 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Name: ";
             // 
+            // customerIdField
+            // 
+            this.customerIdField.Location = new System.Drawing.Point(611, -1);
+            this.customerIdField.Name = "customerIdField";
+            this.customerIdField.ReadOnly = true;
+            this.customerIdField.Size = new System.Drawing.Size(100, 29);
+            this.customerIdField.TabIndex = 2;
+            this.customerIdField.Visible = false;
+            // 
             // CustomerList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Sienna;
             this.ClientSize = new System.Drawing.Size(780, 632);
+            this.Controls.Add(this.customerIdField);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.customerListGridView);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -261,6 +273,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -282,5 +295,6 @@
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.PictureBox customerPictureBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox customerIdField;
     }
 }

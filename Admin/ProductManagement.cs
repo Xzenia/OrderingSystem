@@ -72,7 +72,7 @@ namespace Admin
             catch (Exception cellClickException)
             {
                 MessageBox.Show(cellClickException.Message);
-            }    
+            }
         }
 
         private void productPictureBox_DoubleClick(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace Admin
             }
         }
         //Add delete and refresh buttons
-        private void btnClick(object sender, EventArgs e) 
+        private void btnClick(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             string sbtn = btn.Name;
@@ -103,13 +103,13 @@ namespace Admin
                 case "editBtn":
                     editProduct();
                     break;
-                
+
                 case "addBtn":
                     cbxProductManager.Text = "Add a New Product";
                     AddProduct goToAddProduct = new AddProduct();
                     goToAddProduct.Show();
                     break;
-                
+
                 case "deleteBtn":
                     pdc.deleteProduct(Convert.ToInt32(productIdField.Text));
                     loadDatabase();
@@ -118,7 +118,7 @@ namespace Admin
                 case "refreshBtn":
                     loadDatabase();
                     break;
-                
+
                 default:
                     MessageBox.Show("The event is : " + e.GetType().ToString());
                     break;
@@ -127,11 +127,10 @@ namespace Admin
 
         private void editProduct()
         {
-            AreAnyFieldsEmpty();
             byte[] productImage = tempImg;
             if (!AreAnyFieldsEmpty())
             {
-                if (imageLocation != null)
+                if (imageLocation != "")
                 {
                     productImage = (byte[])imgLib.addImage(imageLocation);
                 }
@@ -167,18 +166,9 @@ namespace Admin
                         return true;
                     }
                 }
-            }
-
-            if (dataChk.checkInputs(productPriceField.Text))
-            {
-                MessageBox.Show("The price textfield contains an invalid character(s)");
-                return false;
 
             }
-            else
-            {
-                return true;
-            }
+            return false;
         }
     }
 }

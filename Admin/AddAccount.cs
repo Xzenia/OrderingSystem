@@ -69,7 +69,6 @@ namespace Admin
                 else
                 {
                     byte[] customerImage;
-                    //This is temporary. A default image will be added and this message will not be needed.
                     if (imageLocation == "")
                     {
                         MessageBox.Show("Please add a profile picture!");
@@ -78,7 +77,7 @@ namespace Admin
                     {
                         customerImage = imgLib.addImage(imageLocation);
                         adc.addUser(userId, username, password);
-                        cdc.adminAddUserInfo(userId, customerImage, fullName, username, customerType);
+                        //cdc.adminAddUserInfo(userId, customerImage, fullName, username, customerType);
                         MessageBox.Show("Account Added!");
                             
                     }
