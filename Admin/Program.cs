@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
 namespace Admin
 {
     static class Program
@@ -17,6 +17,14 @@ namespace Admin
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new AdminMain());
+        }
+
+        static void OnProcessExit(object sender, EventArgs e)
+        {
+            if (File.Exists("userData"))
+            {
+                File.Delete("userData");
+            }
         }
     }
 }

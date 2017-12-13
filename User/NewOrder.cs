@@ -179,6 +179,26 @@ namespace User
             orders.Rows.Clear();
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void orderDateAndTime_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

@@ -55,7 +55,7 @@ namespace DatabaseController
             SqlDataAdapter addsContentToDataSet = new SqlDataAdapter(cmd);
             return addsContentToDataSet;
         }
-
+        
         public Boolean updateProductData(int productId, byte[] productImage, string productName, double productPrice, string productCategory)
         {
             using (SqlCommand cmd = new SqlCommand("SP_UPDATEPRODUCTDATA", connect))

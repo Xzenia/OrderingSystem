@@ -80,6 +80,31 @@ namespace DatabaseController
             }
         }
 
+        public Boolean confirmIfAdmin(string username)
+        {
+            using (SqlCommand cmd = new SqlCommand("SP_AUTHENTICATEUSER", connect))
+            {
+                string dbUserType = "";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Username", username);
+                connect.Open();
+                SqlDataReader dataReader = cmd.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    dbUserType = Convert.ToString(dataReader["AccountType"]);
+                }
+                connect.Close();
+                if (dbUserType.Equals("ADMIN"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
         public Boolean executeQuery(SqlCommand cmd)
         {
             connect.Open();

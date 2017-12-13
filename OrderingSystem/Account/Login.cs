@@ -64,6 +64,7 @@ namespace OrderingSystem.Account
             cookie.UserId = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
             cookie.CustomerName = Convert.ToString(dt.Rows[0].ItemArray[1]);
             cookie.CustomerType = Convert.ToString(dt.Rows[0].ItemArray[2]);
+            cookie.CustomerUsername = usernameField.Text;
             cookie.writeToFile();
         }
 

@@ -145,11 +145,11 @@
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // Register
+            // AddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(410, 453);
+            this.ClientSize = new System.Drawing.Size(402, 449);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.registerBtn);
@@ -163,7 +163,7 @@
             this.Controls.Add(this.customerPictureBox);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Register";
+            this.Name = "AddAccount";
             this.Text = "Register";
             this.Load += new System.EventHandler(this.Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).EndInit();

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using DatabaseController;
 using Admin.Reports;
@@ -22,10 +23,41 @@ namespace Admin
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
+        LoginCookie cookie = new LoginCookie();
+        AccountTableDatabaseController adc = new AccountTableDatabaseController();
 
         public AdminMain()
         {
             InitializeComponent();
+            Application.ApplicationExit += new EventHandler(this.Form1_Closing);
+        }
+
+        private void Form1_Closing(object sender, EventArgs e)
+        {
+            if (File.Exists("userData"))
+            {
+                File.Delete("userData");
+            }
+        }
+
+        private void AdminMain_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                cookie.readFile();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("You haven't logged in. Please do so through OrderingSystem.exe");
+                this.Close();
+            }
+
+            loggedInLabel.Text = "Welcome " + cookie.CustomerName + "! ";
+            if (!adc.confirmIfAdmin(cookie.CustomerUsername))
+            {
+                MessageBox.Show("Non-admin user detected! Program will now close...");
+                this.Close();
+            }
         }
 
         private void btnClick(object sender, EventArgs e)
@@ -65,7 +97,8 @@ namespace Admin
             switch (sbtn)
             {
                 case "addUserBtn":
-
+                    AddAccount goToAddAccount = new AddAccount();
+                    goToAddAccount.Show();
                     break;
                 case "manageCustomerBtn":
                     CustomerList goToCustomerList = new CustomerList();
@@ -103,6 +136,5 @@ namespace Admin
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
-
     }
 }

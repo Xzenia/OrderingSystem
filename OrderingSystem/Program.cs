@@ -20,6 +20,7 @@ namespace OrderingSystem.Account
         }
         static void OnProcessExit(object sender, EventArgs e)
         {
+            Console.WriteLine("EXIT!!!!!");
             if (File.Exists("userData"))
             {
                 File.Delete("userData");

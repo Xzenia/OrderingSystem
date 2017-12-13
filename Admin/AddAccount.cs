@@ -37,7 +37,7 @@ namespace Admin
             {
                 OpenFileDialog dialog = new OpenFileDialog();
                 dialog.Filter = "JPG (*.jpg)|*.jpg|PNG (*.png)|*.png|GIF (*.gif)|*.gif";
-                dialog.Title = "Select Product Picture";
+                dialog.Title = "Select Account Picture";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     imageLocation = dialog.FileName.ToString();

@@ -42,7 +42,7 @@
             this.orderHistoryBtn = new System.Windows.Forms.Button();
             this.addProductBtn = new System.Windows.Forms.Button();
             this.manageProductsBtn = new System.Windows.Forms.Button();
-            this.lblLogged = new System.Windows.Forms.Label();
+            this.loggedInLabel = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
@@ -67,7 +67,7 @@
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.pnlbtm);
-            this.panel3.Controls.Add(this.lblLogged);
+            this.panel3.Controls.Add(this.loggedInLabel);
             this.panel3.Controls.Add(this.btnMinimize);
             this.panel3.Controls.Add(this.btnExit);
             this.panel3.Controls.Add(this.mainMenu);
@@ -79,7 +79,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImage = global::Admin.Properties.Resources.LanCafe;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(355, 53);
             this.panel1.Name = "panel1";
@@ -284,17 +284,17 @@
             this.manageProductsBtn.UseVisualStyleBackColor = false;
             this.manageProductsBtn.Click += new System.EventHandler(this.btnClick);
             // 
-            // lblLogged
+            // loggedInLabel
             // 
-            this.lblLogged.AutoSize = true;
-            this.lblLogged.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblLogged.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogged.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblLogged.Location = new System.Drawing.Point(831, 3);
-            this.lblLogged.Name = "lblLogged";
-            this.lblLogged.Size = new System.Drawing.Size(215, 21);
-            this.lblLogged.TabIndex = 8;
-            this.lblLogged.Text = "You are logged in as EugeneK";
+            this.loggedInLabel.AutoSize = true;
+            this.loggedInLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.loggedInLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loggedInLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.loggedInLabel.Location = new System.Drawing.Point(831, 3);
+            this.loggedInLabel.Name = "loggedInLabel";
+            this.loggedInLabel.Size = new System.Drawing.Size(215, 21);
+            this.loggedInLabel.TabIndex = 8;
+            this.loggedInLabel.Text = "You are logged in as EugeneK";
             // 
             // btnMinimize
             // 
@@ -318,7 +318,7 @@
             this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.SandyBrown;
             this.btnExit.FlatAppearance.BorderSize = 2;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.SandyBrown;
             this.btnExit.Location = new System.Drawing.Point(1086, -1);
             this.btnExit.Name = "btnExit";
@@ -414,7 +414,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblLogged;
+        private System.Windows.Forms.Label loggedInLabel;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.MenuStrip mainMenu;

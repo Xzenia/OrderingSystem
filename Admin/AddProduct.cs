@@ -56,9 +56,9 @@ namespace Admin
         private void AddBtn_Click(object sender, EventArgs e)
         {
             byte[] productImage;
-            if (dataChk.checkInputs(productPriceField.Text) == false)
+            if (!AreAnyFieldsEmpty())
             {
-                MessageBox.Show("One or more textfields contain an invalid character!");
+                //DO nothing because the messages are already expressed. 
             }
             else
             {
@@ -95,6 +95,33 @@ namespace Admin
                     MessageBox.Show(dataException.Message);
                 }
 
+            }
+        }
+
+        private Boolean AreAnyFieldsEmpty()
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is TextBox)
+                {
+                    TextBox textBox = control as TextBox;
+                    if (textBox.Text == string.Empty)
+                    {
+                        MessageBox.Show("One or more fields is empty!");
+                        return true;
+                    }
+                }
+            }
+
+            if (dataChk.checkInputs(productPriceField.Text))
+            {
+                MessageBox.Show("The price textfield contains an invalid character(s)");
+                return false;
+
+            }
+            else
+            {
+                return true;
             }
         }
     }
