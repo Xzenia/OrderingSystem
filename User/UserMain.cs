@@ -94,6 +94,10 @@ namespace User
                     CustomerOrderHistory goToOrderHistory = new CustomerOrderHistory();
                     goToOrderHistory.Show();
                     break;
+                case "userDetailsBtn":
+                    ChangeAccountInformation goToChangeAccount = new ChangeAccountInformation();
+                    goToChangeAccount.Show();
+                    break;
                 default:
                     MessageBox.Show("Something went wrong!");
                     break;

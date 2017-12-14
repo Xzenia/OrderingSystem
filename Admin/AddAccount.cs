@@ -69,6 +69,7 @@ namespace Admin
                 else
                 {
                     byte[] customerImage;
+                    //This is temporary. A default image will be added and this message will not be needed.
                     if (imageLocation == "")
                     {
                         MessageBox.Show("Please add a profile picture!");

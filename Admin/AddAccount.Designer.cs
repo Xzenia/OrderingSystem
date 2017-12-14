@@ -28,18 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAccount));
             this.customerPictureBox = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.fullnameTextBox = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.customerTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.registerBtn = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.passwordTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.cancelBtn = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // customerPictureBox
@@ -47,126 +53,210 @@
             this.customerPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.customerPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.customerPictureBox.Image = global::Admin.Properties.Resources.defaultImage;
-            this.customerPictureBox.Location = new System.Drawing.Point(134, 12);
+            this.customerPictureBox.Location = new System.Drawing.Point(184, 62);
             this.customerPictureBox.Name = "customerPictureBox";
-            this.customerPictureBox.Size = new System.Drawing.Size(150, 150);
+            this.customerPictureBox.Size = new System.Drawing.Size(114, 117);
             this.customerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.customerPictureBox.TabIndex = 0;
             this.customerPictureBox.TabStop = false;
             this.customerPictureBox.DoubleClick += new System.EventHandler(this.customerPictureBox_DoubleClick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 279);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Full Name: ";
-            // 
             // fullnameTextBox
             // 
-            this.fullnameTextBox.Location = new System.Drawing.Point(102, 276);
+            this.fullnameTextBox.BackColor = System.Drawing.Color.Chocolate;
+            this.fullnameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullnameTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.fullnameTextBox.Location = new System.Drawing.Point(143, 268);
             this.fullnameTextBox.Name = "fullnameTextBox";
-            this.fullnameTextBox.Size = new System.Drawing.Size(276, 20);
+            this.fullnameTextBox.Size = new System.Drawing.Size(212, 29);
             this.fullnameTextBox.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 328);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Customer Type: ";
             // 
             // customerTypeComboBox
             // 
+            this.customerTypeComboBox.BackColor = System.Drawing.Color.Chocolate;
             this.customerTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.customerTypeComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.customerTypeComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerTypeComboBox.ForeColor = System.Drawing.SystemColors.Window;
             this.customerTypeComboBox.FormattingEnabled = true;
             this.customerTypeComboBox.Items.AddRange(new object[] {
             "Regular",
             "V.I.P"});
-            this.customerTypeComboBox.Location = new System.Drawing.Point(102, 325);
+            this.customerTypeComboBox.Location = new System.Drawing.Point(142, 303);
             this.customerTypeComboBox.Name = "customerTypeComboBox";
-            this.customerTypeComboBox.Size = new System.Drawing.Size(277, 21);
+            this.customerTypeComboBox.Size = new System.Drawing.Size(213, 29);
             this.customerTypeComboBox.TabIndex = 3;
-            // 
-            // registerBtn
-            // 
-            this.registerBtn.Location = new System.Drawing.Point(60, 387);
-            this.registerBtn.Name = "registerBtn";
-            this.registerBtn.Size = new System.Drawing.Size(109, 35);
-            this.registerBtn.TabIndex = 4;
-            this.registerBtn.Text = "Register";
-            this.registerBtn.UseVisualStyleBackColor = true;
-            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 188);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Username: ";
             // 
             // usernameTextBox
             // 
-            this.usernameTextBox.Location = new System.Drawing.Point(102, 185);
+            this.usernameTextBox.BackColor = System.Drawing.Color.Chocolate;
+            this.usernameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.usernameTextBox.Location = new System.Drawing.Point(144, 198);
             this.usernameTextBox.Name = "usernameTextBox";
-            this.usernameTextBox.Size = new System.Drawing.Size(276, 20);
+            this.usernameTextBox.Size = new System.Drawing.Size(211, 29);
             this.usernameTextBox.TabIndex = 2;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 229);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Password: ";
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(102, 229);
+            this.passwordTextBox.BackColor = System.Drawing.Color.Chocolate;
+            this.passwordTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.ForeColor = System.Drawing.SystemColors.Window;
+            this.passwordTextBox.Location = new System.Drawing.Point(143, 233);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '•';
-            this.passwordTextBox.Size = new System.Drawing.Size(276, 20);
+            this.passwordTextBox.Size = new System.Drawing.Size(212, 29);
             this.passwordTextBox.TabIndex = 5;
             // 
-            // cancelBtn
+            // panel1
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(215, 387);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(109, 35);
-            this.cancelBtn.TabIndex = 4;
-            this.cancelBtn.Text = "Cancel";
-            this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            this.panel1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.passwordTextBox);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.customerTypeComboBox);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.usernameTextBox);
+            this.panel1.Controls.Add(this.fullnameTextBox);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.customerPictureBox);
+            this.panel1.Location = new System.Drawing.Point(12, 46);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(376, 406);
+            this.panel1.TabIndex = 10;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.PeachPuff;
+            this.button1.Location = new System.Drawing.Point(190, 351);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 40);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.LightSalmon;
+            this.label7.Location = new System.Drawing.Point(6, 6);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(141, 32);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "User Details";
+            // 
+            // button2
+            // 
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.PeachPuff;
+            this.button2.Location = new System.Drawing.Point(22, 351);
+            this.button2.Margin = new System.Windows.Forms.Padding(6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(165, 40);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Register";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.registerBtn_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(18, 271);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(83, 21);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Password: ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(17, 201);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 21);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Full Name:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(18, 233);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(88, 21);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Username: ";
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(17, 81);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(158, 50);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Please Double Click to select a picture";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(6, 9);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(287, 32);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Register A New Customer";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(18, 306);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 21);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Customer Type:";
             // 
             // AddAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 449);
-            this.Controls.Add(this.passwordTextBox);
-            this.Controls.Add(this.cancelBtn);
-            this.Controls.Add(this.registerBtn);
-            this.Controls.Add(this.customerTypeComboBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.usernameTextBox);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.fullnameTextBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.customerPictureBox);
+            this.BackColor = System.Drawing.Color.Peru;
+            this.ClientSize = new System.Drawing.Size(401, 467);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label10);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AddAccount";
-            this.Text = "Register";
+            this.Text = "Add a Customer Account";
             this.Load += new System.EventHandler(this.Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,15 +265,19 @@
         #endregion
 
         private System.Windows.Forms.PictureBox customerPictureBox;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox fullnameTextBox;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox customerTypeComboBox;
-        private System.Windows.Forms.Button registerBtn;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox usernameTextBox;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox passwordTextBox;
-        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
     }
 }

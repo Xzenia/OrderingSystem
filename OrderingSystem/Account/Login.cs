@@ -24,7 +24,7 @@ namespace OrderingSystem.Account
         {
             InitializeComponent();
             usernameField.Text = "hello";
-            passwordField.Text = "hello";
+               passwordField.Text = "hello";
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -61,9 +61,10 @@ namespace OrderingSystem.Account
 
         private void saveUserDataToCookie(){
             DataTable dt = cdc.getData(usernameField.Text);
-            cookie.UserId = Convert.ToInt32(dt.Rows[0].ItemArray[0]);
-            cookie.CustomerName = Convert.ToString(dt.Rows[0].ItemArray[1]);
-            cookie.CustomerType = Convert.ToString(dt.Rows[0].ItemArray[2]);
+            DataRow row = dt.Rows[0];
+            cookie.UserId = Convert.ToInt32(row["CustomerId"]);
+            cookie.CustomerName = Convert.ToString(row["CustomerName"]);
+            cookie.CustomerType = Convert.ToString(row["CustomerType"]);
             cookie.CustomerUsername = usernameField.Text;
             cookie.writeToFile();
         }
@@ -89,8 +90,5 @@ namespace OrderingSystem.Account
             goToRegister.Show();
             this.Hide();                    
         }
-
-
-        
     }
 }

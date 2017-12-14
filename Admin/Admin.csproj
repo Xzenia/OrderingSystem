@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAccount.designer.cs">
+      <DependentUpon>AddAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -101,12 +107,6 @@
     <Compile Include="AdminSplashScreen.designer.cs">
       <DependentUpon>AdminSplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddAccount.Designer.cs">
-      <DependentUpon>AddAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reports\OrderHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +119,9 @@
     <Compile Include="Reports\SalesReport.Designer.cs">
       <DependentUpon>SalesReport.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddAccount.resx">
+      <DependentUpon>AddAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,9 +146,6 @@
     </Compile>
     <EmbeddedResource Include="AdminSplashScreen.resx">
       <DependentUpon>AdminSplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddAccount.resx">
-      <DependentUpon>AddAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\OrderHistory.resx">
       <DependentUpon>OrderHistory.cs</DependentUpon>

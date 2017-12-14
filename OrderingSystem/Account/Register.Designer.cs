@@ -39,6 +39,10 @@
             this.cancelBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.customerBirthdayField = new System.Windows.Forms.DateTimePicker();
+            this.emailField = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.contactNumberField = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +77,7 @@
             // 
             // registerBtn
             // 
-            this.registerBtn.Location = new System.Drawing.Point(68, 462);
+            this.registerBtn.Location = new System.Drawing.Point(69, 500);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(109, 35);
             this.registerBtn.TabIndex = 4;
@@ -116,7 +120,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(220, 462);
+            this.cancelBtn.Location = new System.Drawing.Point(217, 500);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(109, 35);
             this.cancelBtn.TabIndex = 4;
@@ -142,11 +146,47 @@
             this.customerBirthdayField.Size = new System.Drawing.Size(276, 20);
             this.customerBirthdayField.TabIndex = 6;
             // 
+            // emailField
+            // 
+            this.emailField.Location = new System.Drawing.Point(103, 379);
+            this.emailField.Name = "emailField";
+            this.emailField.Size = new System.Drawing.Size(276, 20);
+            this.emailField.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 382);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Email";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 439);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(84, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Contact Number";
+            // 
+            // contactNumberField
+            // 
+            this.contactNumberField.Location = new System.Drawing.Point(103, 436);
+            this.contactNumberField.Name = "contactNumberField";
+            this.contactNumberField.Size = new System.Drawing.Size(276, 20);
+            this.contactNumberField.TabIndex = 8;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 522);
+            this.ClientSize = new System.Drawing.Size(432, 558);
+            this.Controls.Add(this.contactNumberField);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.emailField);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.customerBirthdayField);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.cancelBtn);
@@ -162,6 +202,7 @@
             this.MinimizeBox = false;
             this.Name = "Register";
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -181,5 +222,9 @@
         private System.Windows.Forms.Button cancelBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker customerBirthdayField;
+        private System.Windows.Forms.TextBox emailField;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox contactNumberField;
     }
 }

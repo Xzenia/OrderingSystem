@@ -33,7 +33,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.loggedInLabel = new System.Windows.Forms.Label();
             this.pnlbtm = new System.Windows.Forms.Panel();
-            this.btnUserDetails = new System.Windows.Forms.Button();
+            this.userDetailsBtn = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
@@ -98,7 +98,7 @@
             // 
             this.pnlbtm.BackColor = System.Drawing.Color.Transparent;
             this.pnlbtm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlbtm.Controls.Add(this.btnUserDetails);
+            this.pnlbtm.Controls.Add(this.userDetailsBtn);
             this.pnlbtm.Controls.Add(this.btnHistory);
             this.pnlbtm.Controls.Add(this.btnOrder);
             this.pnlbtm.Location = new System.Drawing.Point(11, 41);
@@ -107,24 +107,24 @@
             this.pnlbtm.TabIndex = 7;
             this.pnlbtm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             // 
-            // btnUserDetails
+            // userDetailsBtn
             // 
-            this.btnUserDetails.BackColor = System.Drawing.Color.SaddleBrown;
-            this.btnUserDetails.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.btnUserDetails.FlatAppearance.BorderSize = 2;
-            this.btnUserDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserDetails.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserDetails.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUserDetails.Image = global::User.Properties.Resources.ic_perm_identity_white_24dp_2x1;
-            this.btnUserDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUserDetails.Location = new System.Drawing.Point(838, 3);
-            this.btnUserDetails.Name = "btnUserDetails";
-            this.btnUserDetails.Size = new System.Drawing.Size(270, 64);
-            this.btnUserDetails.TabIndex = 0;
-            this.btnUserDetails.Text = "Change Account Details";
-            this.btnUserDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserDetails.UseVisualStyleBackColor = false;
-            this.btnUserDetails.Click += new System.EventHandler(this.btnClick);
+            this.userDetailsBtn.BackColor = System.Drawing.Color.SaddleBrown;
+            this.userDetailsBtn.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.userDetailsBtn.FlatAppearance.BorderSize = 2;
+            this.userDetailsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userDetailsBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userDetailsBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.userDetailsBtn.Image = global::User.Properties.Resources.ic_perm_identity_white_24dp_2x1;
+            this.userDetailsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.userDetailsBtn.Location = new System.Drawing.Point(838, 3);
+            this.userDetailsBtn.Name = "userDetailsBtn";
+            this.userDetailsBtn.Size = new System.Drawing.Size(270, 64);
+            this.userDetailsBtn.TabIndex = 0;
+            this.userDetailsBtn.Text = "Change Account Details";
+            this.userDetailsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userDetailsBtn.UseVisualStyleBackColor = false;
+            this.userDetailsBtn.Click += new System.EventHandler(this.btnClick);
             // 
             // btnHistory
             // 
@@ -354,7 +354,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFile;
         private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
         private System.Windows.Forms.Panel pnlbtm;
-        private System.Windows.Forms.Button btnUserDetails;
+        private System.Windows.Forms.Button userDetailsBtn;
         private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Panel panel3;

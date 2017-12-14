@@ -46,27 +46,6 @@ namespace DatabaseController
             return addsContentToDataSet;
         }
 
-        public Boolean addOrderInfo(DataTable data)
-        {
-            using (SqlBulkCopy bc = new SqlBulkCopy(connect))
-            {
-                connect.Open();
-                bc.DestinationTableName = "CustomerTable";
-                try
-                {
-                    bc.WriteToServer(data);
-                    connect.Close();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    connect.Close();
-                    return false;
-                }
-            }
-        }
-
         public Boolean updateCustomerData(byte[] customerImage, int customerId, String customerName, String customerBirthday, String cellphoneNumber, String email, String membershipType)
         {
             using (SqlCommand cmd = new SqlCommand("SP_UPDATECUSTOMERDATA", connect))
@@ -82,7 +61,24 @@ namespace DatabaseController
                 return executeQuery(cmd);
             }
         }
-        
+
+        public Boolean addCustomerData(byte[] customerImage, int customerId, String customerName, String customerUsername, String customerBirthday, String cellphoneNumber, String email, String membershipType)
+        {
+            using (SqlCommand cmd = new SqlCommand("SP_ADDNEWCUSTOMERDATA", connect))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CustomerImage", customerImage);
+                cmd.Parameters.AddWithValue("@CustomerId", customerId);
+                cmd.Parameters.AddWithValue("@CustomerUsername", customerUsername);
+                cmd.Parameters.AddWithValue("@CustomerBirthday", customerBirthday);
+                cmd.Parameters.AddWithValue("@CustomerName", customerName);
+                cmd.Parameters.AddWithValue("@CustomerEmail", email);
+                cmd.Parameters.AddWithValue("@CustomerCellphoneNumber", cellphoneNumber);
+                cmd.Parameters.AddWithValue("@CustomerType", membershipType);
+                return executeQuery(cmd);
+            }
+        }
+
         public Boolean executeQuery(SqlCommand cmd)
         {
             connect.Open();

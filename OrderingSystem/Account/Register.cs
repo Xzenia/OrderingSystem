@@ -20,7 +20,7 @@ namespace OrderingSystem.Account
         AccountTableDatabaseController adc = new AccountTableDatabaseController();
         ImageLibrary imgLib = new ImageLibrary();
         String imageLocation = "";
-        
+        DataTable registration = new DataTable();
         public Register()
         {
             InitializeComponent();
@@ -59,6 +59,11 @@ namespace OrderingSystem.Account
                 String username = usernameTextBox.Text;
                 String password = passwordTextBox.Text;
                 String fullName = fullnameTextBox.Text;
+                String contactNumber = contactNumberField.Text;
+                String email = emailField.Text;
+                String birthday = customerBirthdayField.Text;
+                String customerType = "Regular";
+
                 int confirm = adc.checkIfUsernameExists(username);
                 if (confirm > 0)
                 {
@@ -76,11 +81,18 @@ namespace OrderingSystem.Account
                     {
                         customerImage = imgLib.addImage(imageLocation);
                         adc.addUser(userId, username, password);
-                        //cdc.addUserInfo(userId, customerImage, fullName, username);
-                        MessageBox.Show("Successfully Registered!");
-                        System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(LoginProcess));
-                        thread.Start();
-                        this.Close();
+                        Boolean confirmData = cdc.addCustomerData(customerImage, userId, username, fullName, birthday,contactNumber, email, customerType);
+                        if (confirmData)
+                        {
+                            MessageBox.Show("Successfully Registered!");
+                            System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(LoginProcess));
+                            thread.Start();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Registration was not successful");
+                        }
                     }
                 }
             }
@@ -102,6 +114,10 @@ namespace OrderingSystem.Account
             Login goToLogin = new Login();
             goToLogin.Show();
             this.Hide();
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
         }
     }
 }

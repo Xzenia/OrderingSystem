@@ -22,7 +22,7 @@ namespace Admin
         private void tm_Tick(object sender, EventArgs e)
         {
             loadBar.Increment(1);
-            if (loadBar.Value == 100)
+            if (loadBar.Value == 50)
             {
                 tm.Stop();
                 System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(MainProcess));
