@@ -51,8 +51,8 @@
             // 
             // reportViewer1
             // 
-            this.reportViewer1.BackColor = System.Drawing.Color.Sienna;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.ForeColor = System.Drawing.SystemColors.ControlText;
             reportDataSource1.Name = "OrderHistory";
             reportDataSource1.Value = this.orderTableBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);

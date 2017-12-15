@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductManagement));
             this.cbxProductManager = new System.Windows.Forms.GroupBox();
             this.productNameField = new System.Windows.Forms.TextBox();
+            this.deleteBtn = new System.Windows.Forms.Button();
             this.addBtn = new System.Windows.Forms.Button();
             this.productPictureBox = new System.Windows.Forms.PictureBox();
             this.refreshBtn = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.productIdField = new System.Windows.Forms.TextBox();
             this.productListGridView = new System.Windows.Forms.DataGridView();
-            this.deleteBtn = new System.Windows.Forms.Button();
             this.cbxProductManager.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productListGridView)).BeginInit();
@@ -83,6 +83,21 @@
             this.productNameField.Size = new System.Drawing.Size(183, 33);
             this.productNameField.TabIndex = 17;
             // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.Firebrick;
+            this.deleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
+            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deleteBtn.ForeColor = System.Drawing.Color.SeaShell;
+            this.deleteBtn.Location = new System.Drawing.Point(489, 169);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(122, 39);
+            this.deleteBtn.TabIndex = 16;
+            this.deleteBtn.Text = "Delete";
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.btnClick);
+            // 
             // addBtn
             // 
             this.addBtn.BackColor = System.Drawing.Color.Chocolate;
@@ -90,7 +105,7 @@
             this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.addBtn.Location = new System.Drawing.Point(274, 165);
+            this.addBtn.Location = new System.Drawing.Point(350, 169);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(122, 39);
             this.addBtn.TabIndex = 16;
@@ -118,7 +133,7 @@
             this.refreshBtn.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
             this.refreshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.refreshBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refreshBtn.Location = new System.Drawing.Point(13, 165);
+            this.refreshBtn.Location = new System.Drawing.Point(89, 169);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(109, 39);
             this.refreshBtn.TabIndex = 4;
@@ -132,7 +147,7 @@
             this.editBtn.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
             this.editBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editBtn.Location = new System.Drawing.Point(137, 165);
+            this.editBtn.Location = new System.Drawing.Point(213, 169);
             this.editBtn.Name = "editBtn";
             this.editBtn.Size = new System.Drawing.Size(115, 39);
             this.editBtn.TabIndex = 5;
@@ -242,21 +257,6 @@
             this.productListGridView.Size = new System.Drawing.Size(690, 277);
             this.productListGridView.TabIndex = 0;
             this.productListGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productListGridView_CellClick);
-            // 
-            // deleteBtn
-            // 
-            this.deleteBtn.BackColor = System.Drawing.Color.Firebrick;
-            this.deleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
-            this.deleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.deleteBtn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deleteBtn.ForeColor = System.Drawing.Color.SeaShell;
-            this.deleteBtn.Location = new System.Drawing.Point(413, 165);
-            this.deleteBtn.Name = "deleteBtn";
-            this.deleteBtn.Size = new System.Drawing.Size(122, 39);
-            this.deleteBtn.TabIndex = 16;
-            this.deleteBtn.Text = "Delete";
-            this.deleteBtn.UseVisualStyleBackColor = false;
-            this.deleteBtn.Click += new System.EventHandler(this.btnClick);
             // 
             // ProductManagement
             // 
