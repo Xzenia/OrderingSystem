@@ -87,6 +87,8 @@ namespace Admin
                 if (confirm)
                 {
                     MessageBox.Show("Customer information successfully edited!");
+                    loadDatabase();
+                    emptyAll();
                 }
                 else
                 {
@@ -94,6 +96,17 @@ namespace Admin
                 }
             }
         }
+
+        private void emptyAll()
+        {
+            customerNameField.Text = "";
+            customerBirthdayField.Text = DateTime.Now.ToString("M/dd/yyyy");
+            customerCellphoneNumberField.Text = "";
+            customerEmailField.Text = "";
+            membershipTypeComboBox.SelectedIndex = 0;
+            customerPictureBox.Image = Admin.Properties.Resources.defaultImage;
+        }
+
 
         private Boolean AreAnyFieldsEmpty()
         {

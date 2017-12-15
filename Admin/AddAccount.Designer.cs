@@ -38,7 +38,7 @@
             this.birthdayField = new System.Windows.Forms.DateTimePicker();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.reEnterPasswordField = new System.Windows.Forms.MaskedTextBox();
+            this.repeatPasswordField = new System.Windows.Forms.MaskedTextBox();
             this.addBtn = new System.Windows.Forms.Button();
             this.emailField = new System.Windows.Forms.TextBox();
             this.phoneNumberField = new System.Windows.Forms.TextBox();
@@ -96,7 +96,7 @@
             this.panel1.Controls.Add(this.birthdayField);
             this.panel1.Controls.Add(this.cancelBtn);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.reEnterPasswordField);
+            this.panel1.Controls.Add(this.repeatPasswordField);
             this.panel1.Controls.Add(this.passwordField);
             this.panel1.Controls.Add(this.addBtn);
             this.panel1.Controls.Add(this.fullNameField);
@@ -174,16 +174,16 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "User Details";
             // 
-            // reEnterPasswordField
+            // repeatPasswordField
             // 
-            this.reEnterPasswordField.BackColor = System.Drawing.Color.Chocolate;
-            this.reEnterPasswordField.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reEnterPasswordField.ForeColor = System.Drawing.SystemColors.Window;
-            this.reEnterPasswordField.Location = new System.Drawing.Point(185, 327);
-            this.reEnterPasswordField.Name = "reEnterPasswordField";
-            this.reEnterPasswordField.PasswordChar = '•';
-            this.reEnterPasswordField.Size = new System.Drawing.Size(213, 29);
-            this.reEnterPasswordField.TabIndex = 5;
+            this.repeatPasswordField.BackColor = System.Drawing.Color.Chocolate;
+            this.repeatPasswordField.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repeatPasswordField.ForeColor = System.Drawing.SystemColors.Window;
+            this.repeatPasswordField.Location = new System.Drawing.Point(185, 327);
+            this.repeatPasswordField.Name = "repeatPasswordField";
+            this.repeatPasswordField.PasswordChar = '•';
+            this.repeatPasswordField.Size = new System.Drawing.Size(213, 29);
+            this.repeatPasswordField.TabIndex = 5;
             // 
             // addBtn
             // 
@@ -393,7 +393,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox reEnterPasswordField;
+        private System.Windows.Forms.MaskedTextBox repeatPasswordField;
         private System.Windows.Forms.DateTimePicker birthdayField;
         private System.Windows.Forms.ComboBox accountTypeComboBox;
         private System.Windows.Forms.CheckBox adminCheckBox;

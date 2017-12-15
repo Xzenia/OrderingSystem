@@ -31,11 +31,7 @@ namespace Admin
         {
             try
             {
-                if (imageLocation == "")
-                {
-                    MessageBox.Show("You must provide a profile picture!");
-                }
-                else
+                if (errorChecking())
                 {
                     customerImage = (byte[])imgLib.addImage(imageLocation);
                     Random rnd = new Random();
@@ -49,15 +45,18 @@ namespace Admin
                             String userType = "ADMIN";
                             adc.adminAddUser(userId, usernameField.Text, passwordField.Text, userType);
                         }
+                        else
+                        {
+                            adc.addUser(userId, usernameField.Text, passwordField.Text);
+                        }
                         MessageBox.Show("User information successfully updated!");
+                        emptyAll();
                     }
-
                     else
                     {
                         MessageBox.Show("User information was not updated!");
                     }
-                }
-               
+                 }
             }
             catch (Exception MissingFileException)
             {
@@ -70,6 +69,19 @@ namespace Admin
             comboBoxBs.DataSource = cdc.viewAllData("SP_CUSTOMERTYPE").Tables[0];
             accountTypeComboBox.DisplayMember = "CustomerType";
             accountTypeComboBox.DataSource = comboBoxBs;
+        }
+
+        private void emptyAll()
+        {
+            usernameField.Text = "";
+            passwordField.Text = "";
+            repeatPasswordField.Text = "";
+            fullNameField.Text = "";
+            phoneNumberField.Text = "";
+            emailField.Text = "";
+            birthdayField.Text = DateTime.Now.ToString("M/dd/yyyy");
+            accountTypeComboBox.SelectedIndex = 0;
+            customerPictureBox.Image = Admin.Properties.Resources.defaultImage;
         }
 
         
@@ -90,6 +102,33 @@ namespace Admin
             catch (Exception openFileDialogException)
             {
                 MessageBox.Show(openFileDialogException.Message);
+            }
+        }
+
+        private Boolean errorChecking()
+        {
+            if (usernameField.Text.Equals(String.Empty) || fullNameField.Text.Equals(String.Empty) || emailField.Text.Equals(String.Empty) || phoneNumberField.Text.Equals(String.Empty) || passwordField.Text.Equals(String.Empty))
+            {
+                MessageBox.Show("One or more fields are empty!");
+                return false;
+            }
+            else
+            {
+                if (!passwordField.Text.Equals(repeatPasswordField.Text))
+                {
+                    MessageBox.Show("Password fields don't match!");
+                    return false;
+                }
+
+                if (imageLocation.Equals(""))
+                {
+                    MessageBox.Show("Please add a profile picture!");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
         }
 

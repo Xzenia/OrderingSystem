@@ -77,6 +77,7 @@ namespace Admin
                             MessageBox.Show("Data added to database successfully!");
                             productNameField.Text = "";
                             productPriceField.Text = "";
+                            productPictureBox.Image = Admin.Properties.Resources.defaultImage;
                             pm.loadDatabase();
                         }
                         else
