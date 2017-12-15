@@ -188,6 +188,10 @@
       <Project>{0292fb69-a259-4f44-85bf-a3627bc60c7d}</Project>
       <Name>ProgramLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\User\User.csproj">
+      <Project>{4a3eeb30-c85e-4266-a220-799ee7b388b8}</Project>
+      <Name>User</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\coffee21.jpg" />

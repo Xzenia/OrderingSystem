@@ -28,23 +28,25 @@ namespace User
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            customerImage = tempImg;
-            if (imageLocation != "")
+            if (errorChecking())
             {
-                customerImage = (byte[])imgLib.addImage(imageLocation);
+                customerImage = tempImg;
+                if (imageLocation != "")
+                {
+                    customerImage = (byte[])imgLib.addImage(imageLocation);
+                }
+                Boolean confirm = cdc.updateCustomerData(customerImage, userId, fullNameField.Text, birthdayField.Text, phoneNumberField.Text, emailField.Text, accountTypeLabel.Text);
+                if (confirm)
+                {
+                    MessageBox.Show("User information successfully updated!");
+                    loadData();
+                }
+                else
+                {
+                    MessageBox.Show("User information was not updated!");
+                }
             }
-            Boolean confirm = cdc.updateCustomerData(customerImage, userId, fullNameField.Text, birthdayField.Text, phoneNumberField.Text, emailField.Text, accountTypeLabel.Text);
-
-            if (confirm)
-            {
-                MessageBox.Show("User information successfully updated!");
-                loadData();
-            }
-            else
-            {
-                MessageBox.Show("User information was not updated!");
-            }
-        }
+         }    
 
         private void ChangeAccountInformation_Load(object sender, EventArgs e)
         {
@@ -85,6 +87,48 @@ namespace User
             catch (Exception openFileDialogException)
             {
                 MessageBox.Show(openFileDialogException.Message);
+            }
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            cookie.readFile();
+            cdc.deleteCustomer(cookie.UserId);
+            MessageBox.Show("Account deleted. Please close the program...");
+            Environment.Exit(0); 
+        }
+
+        private Boolean errorChecking()
+        {
+            if (usernameField.Text.Equals(String.Empty) || fullNameField.Text.Equals(String.Empty) || emailField.Text.Equals(String.Empty) || phoneNumberField.Text.Equals(String.Empty))
+            {
+                MessageBox.Show("One or more fields are empty!");
+                return false;
+            }
+            else
+            {
+                //Since the password field is optional. Either way it returns true unless the fields don't match.
+                if (!passwordField.Text.Equals(String.Empty))
+                {
+                    if (passwordField.Text.Equals(repeatPasswordField.Text))
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Password fields don't match!");
+                        return false;
+                    }
+                }
+                else
+                {
+                    return true;
+                }     
             }
         }
     }

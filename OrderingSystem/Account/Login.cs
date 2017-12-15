@@ -5,18 +5,26 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DatabaseController;
 using Admin;
 using User;
-using System.Threading;
-
-
 namespace OrderingSystem.Account
 {
     public partial class Login : Form
     {
+        //This is used for the custom window dragging takes Windows Frame 
+        //Taken for mhttps://stackoverflow.com/questions/1592876/make-a-borderless-form-movable
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        //Takes dynamic libraries for the the dragging effect
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         AccountTableDatabaseController adc = new AccountTableDatabaseController();
         CustomerDatabaseController cdc = new CustomerDatabaseController();
         LoginCookie cookie = new LoginCookie();
@@ -24,7 +32,7 @@ namespace OrderingSystem.Account
         {
             InitializeComponent();
             usernameField.Text = "hello";
-               passwordField.Text = "hello";
+            passwordField.Text = "hello";
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -49,7 +57,6 @@ namespace OrderingSystem.Account
                     thread.Start();
                     this.Close();
                 }
-
             }
             else
             {
@@ -87,8 +94,24 @@ namespace OrderingSystem.Account
         private void registerBtn_Click(object sender, EventArgs e)
         {
             Register goToRegister = new Register();
+            this.Hide();
             goToRegister.Show();
-            this.Hide();                    
+              
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void mainMenu_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
     }
 }

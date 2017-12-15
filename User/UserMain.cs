@@ -127,11 +127,8 @@ namespace User
                 case "mnuGenRep":
                     Environment.Exit(0);
                     break;
-                case "btnResize":
-
-                    break;
-                case "btnMinimize":
-
+                case "menuLogOut":
+                    Environment.Exit(0);
                     break;
                 default:
                     //MessageBox.Show("The event is : " + e.GetType().ToString());

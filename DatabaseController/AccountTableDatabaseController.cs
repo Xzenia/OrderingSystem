@@ -13,7 +13,7 @@ namespace DatabaseController
     {
         HashPassword sec = new HashPassword();
         Guid userGuid = System.Guid.NewGuid();
-        SqlConnection connect = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename='C:\Users\Aaron Miguel\Documents\Programming Mindfuckery\C# Bizarre Adventures\OrderingSystem\DatabaseController\Database\ProgramDatabase.mdf';Integrated Security=True");
+        SqlConnection connect = ConstantVariables.connect;
         public string dbUserType = "Regular";
         public int dbUserId = 0;
 
@@ -23,20 +23,35 @@ namespace DatabaseController
             String hashedPassword = sec.HashSHA256(password + userGuid.ToString());
             using(SqlCommand cmd = new SqlCommand("SP_ADDNEWUSERACCOUNTAUTHENTICATOR", connect))
             {
+                String userType = "Regular";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@UserId", userId);
                 cmd.Parameters.AddWithValue("@Username", username);
                 cmd.Parameters.AddWithValue("@Password", hashedPassword);
                 cmd.Parameters.AddWithValue("@UserGuid", userGuid);
+                cmd.Parameters.AddWithValue("@AccountType", userType);
                 return executeQuery(cmd);
             }
         }
 
-
+        public Boolean adminAddUser(int userId, string username, string password, string userType)
+        {
+            //Hash the password with SHA256 
+            String hashedPassword = sec.HashSHA256(password + userGuid.ToString());
+            using (SqlCommand cmd = new SqlCommand("SP_ADDNEWUSERACCOUNTAUTHENTICATOR", connect))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@UserId", userId);
+                cmd.Parameters.AddWithValue("@Username", username);
+                cmd.Parameters.AddWithValue("@Password", hashedPassword);
+                cmd.Parameters.AddWithValue("@UserGuid", userGuid);
+                cmd.Parameters.AddWithValue("@AccountType", userType);
+                return executeQuery(cmd);
+            }
+        }
 
         public int checkIfUsernameExists(string username)
-        {
-            
+        {            
             using (SqlCommand cmd = new SqlCommand("SP_CHECKIFUSERNAMEEXISTS", connect))
             {
                 cmd.CommandType = CommandType.StoredProcedure;

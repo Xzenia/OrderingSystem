@@ -5,11 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.IO;
 using System.Windows.Forms;
 using DatabaseController;
 using Admin.Reports;
+using User;
 namespace Admin
 {
     public partial class AdminMain : Form
@@ -25,7 +27,7 @@ namespace Admin
         public static extern bool ReleaseCapture();
         LoginCookie cookie = new LoginCookie();
         AccountTableDatabaseController adc = new AccountTableDatabaseController();
-
+        int deleteSwitch = 1;
         public AdminMain()
         {
             InitializeComponent();
@@ -34,7 +36,7 @@ namespace Admin
 
         private void Form1_Closing(object sender, EventArgs e)
         {
-            if (File.Exists("userData"))
+            if (File.Exists("userData") && deleteSwitch == 1)
             {
                 File.Delete("userData");
             }
@@ -52,7 +54,6 @@ namespace Admin
                 this.Close();
             }
 
-            loggedInLabel.Text = "Welcome " + cookie.CustomerName + "! ";
             if (!adc.confirmIfAdmin(cookie.CustomerUsername))
             {
                 MessageBox.Show("Non-admin user detected! Program will now close...");
@@ -126,7 +127,6 @@ namespace Admin
                 this.WindowState = FormWindowState.Normal;
             }
         }
-
         //Contains the custom drag event
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
@@ -135,6 +135,25 @@ namespace Admin
                 ReleaseCapture();
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
+        }
+
+        private void mnuLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        //Takes the admin to the user store
+        private void storeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deleteSwitch = 0;
+            System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(UserProcess));
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            this.Close();
+        }
+
+        public static void UserProcess()
+        {
+            Application.Run(new UserSplashScreen());
         }
     }
 }

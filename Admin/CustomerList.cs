@@ -107,6 +107,10 @@ namespace Admin
                         MessageBox.Show("One or more fields is empty!");
                         return true;
                     }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
             return false;
@@ -129,6 +133,11 @@ namespace Admin
             {
                 MessageBox.Show(openFileDialogException.Message);
             }
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -189,6 +189,7 @@
             this.cancelBtn.TabIndex = 9;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // acceptBtn
             // 
@@ -200,7 +201,7 @@
             this.acceptBtn.Name = "acceptBtn";
             this.acceptBtn.Size = new System.Drawing.Size(140, 39);
             this.acceptBtn.TabIndex = 9;
-            this.acceptBtn.Text = "Accept";
+            this.acceptBtn.Text = "Edit";
             this.acceptBtn.UseVisualStyleBackColor = false;
             this.acceptBtn.Click += new System.EventHandler(this.acceptBtn_Click);
             // 

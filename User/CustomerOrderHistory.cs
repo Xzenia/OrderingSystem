@@ -19,6 +19,7 @@ namespace User
         SqlDataAdapter sda = new SqlDataAdapter();
         LoginCookie cookie = new LoginCookie();
         BindingSource bs = new BindingSource();
+        
         public CustomerOrderHistory()
         {
             InitializeComponent();
@@ -35,6 +36,5 @@ namespace User
             bs.DataSource = odc.viewUserOrderHistory(cookie.UserId);
             customerOrderHistoryGridView.DataSource = bs;
         }
-
     }
 }

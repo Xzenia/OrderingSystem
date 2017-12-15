@@ -29,6 +29,17 @@ namespace DatabaseController
             }
         }
 
+        public void deleteCustomer(int id)
+        {
+            string storedProcedure = "SP_DELETEUSERDATA";
+            using (SqlCommand cmd = new SqlCommand(storedProcedure, connect))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CustomerId", id);
+                executeQuery(cmd);
+            }
+        }
+
         public DataSet viewAllData(string storedProcedure)
         {
             DataSet ds = new DataSet();
@@ -73,7 +84,7 @@ namespace DatabaseController
                 cmd.Parameters.AddWithValue("@CustomerBirthday", customerBirthday);
                 cmd.Parameters.AddWithValue("@CustomerName", customerName);
                 cmd.Parameters.AddWithValue("@CustomerEmail", email);
-                cmd.Parameters.AddWithValue("@CustomerCellphoneNumber", cellphoneNumber);
+                cmd.Parameters.AddWithValue("@CustomerContactNumber", cellphoneNumber);
                 cmd.Parameters.AddWithValue("@CustomerType", membershipType);
                 return executeQuery(cmd);
             }

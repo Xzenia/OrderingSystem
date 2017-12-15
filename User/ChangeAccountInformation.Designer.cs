@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChangeAccountInformation));
             this.usernameField = new System.Windows.Forms.TextBox();
             this.fullNameField = new System.Windows.Forms.TextBox();
             this.passwordField = new System.Windows.Forms.MaskedTextBox();
@@ -36,7 +37,7 @@
             this.accountTypeLabel = new System.Windows.Forms.Label();
             this.cancelBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.reEnterPasswordField = new System.Windows.Forms.MaskedTextBox();
+            this.repeatPasswordField = new System.Windows.Forms.MaskedTextBox();
             this.deleteBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
             this.emailField = new System.Windows.Forms.TextBox();
@@ -50,8 +51,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.customerPictureBox = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).BeginInit();
             this.SuspendLayout();
@@ -94,7 +95,7 @@
             this.panel1.Controls.Add(this.accountTypeLabel);
             this.panel1.Controls.Add(this.cancelBtn);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.reEnterPasswordField);
+            this.panel1.Controls.Add(this.repeatPasswordField);
             this.panel1.Controls.Add(this.passwordField);
             this.panel1.Controls.Add(this.deleteBtn);
             this.panel1.Controls.Add(this.updateBtn);
@@ -148,6 +149,7 @@
             this.cancelBtn.TabIndex = 4;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // label7
             // 
@@ -161,16 +163,16 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "User Details";
             // 
-            // reEnterPasswordField
+            // repeatPasswordField
             // 
-            this.reEnterPasswordField.BackColor = System.Drawing.Color.Chocolate;
-            this.reEnterPasswordField.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reEnterPasswordField.ForeColor = System.Drawing.SystemColors.Window;
-            this.reEnterPasswordField.Location = new System.Drawing.Point(185, 327);
-            this.reEnterPasswordField.Name = "reEnterPasswordField";
-            this.reEnterPasswordField.PasswordChar = '•';
-            this.reEnterPasswordField.Size = new System.Drawing.Size(213, 29);
-            this.reEnterPasswordField.TabIndex = 5;
+            this.repeatPasswordField.BackColor = System.Drawing.Color.Chocolate;
+            this.repeatPasswordField.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.repeatPasswordField.ForeColor = System.Drawing.SystemColors.Window;
+            this.repeatPasswordField.Location = new System.Drawing.Point(185, 327);
+            this.repeatPasswordField.Name = "repeatPasswordField";
+            this.repeatPasswordField.PasswordChar = '•';
+            this.repeatPasswordField.Size = new System.Drawing.Size(213, 29);
+            this.repeatPasswordField.TabIndex = 5;
             // 
             // deleteBtn
             // 
@@ -185,6 +187,7 @@
             this.deleteBtn.TabIndex = 3;
             this.deleteBtn.Text = "Permanently Delete this Account";
             this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
             // updateBtn
             // 
@@ -325,18 +328,6 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Please Double Click to select a picture";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(6, 9);
-            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(388, 32);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Update or Manage Account Details";
-            // 
             // customerPictureBox
             // 
             this.customerPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -350,6 +341,18 @@
             this.customerPictureBox.TabStop = false;
             this.customerPictureBox.DoubleClick += new System.EventHandler(this.customerPictureBox_DoubleClick);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(6, 9);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(388, 32);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Update or Manage Account Details";
+            // 
             // ChangeAccountInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,6 +361,7 @@
             this.ClientSize = new System.Drawing.Size(455, 733);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label10);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ChangeAccountInformation";
@@ -395,7 +399,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox reEnterPasswordField;
+        private System.Windows.Forms.MaskedTextBox repeatPasswordField;
         private System.Windows.Forms.DateTimePicker birthdayField;
     }
 }

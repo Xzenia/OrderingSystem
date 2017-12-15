@@ -55,33 +55,29 @@ namespace OrderingSystem.Account
         {
             try
             {
-                int userId = generateCustomerId();
-                String username = usernameTextBox.Text;
-                String password = passwordTextBox.Text;
-                String fullName = fullnameTextBox.Text;
-                String contactNumber = contactNumberField.Text;
-                String email = emailField.Text;
-                String birthday = customerBirthdayField.Text;
-                String customerType = "Regular";
+                if (errorChecking())
+                {
+                    int userId = generateCustomerId();
+                    String username = usernameTextBox.Text;
+                    String password = passwordTextBox.Text;
+                    String fullName = fullnameTextBox.Text;
+                    String contactNumber = contactNumberField.Text;
+                    String email = emailField.Text;
+                    String birthday = customerBirthdayField.Text;
+                    String customerType = "Regular";
 
-                int confirm = adc.checkIfUsernameExists(username);
-                if (confirm > 0)
-                {
-                    MessageBox.Show("Username already exists!");
-                    usernameTextBox.Text = "";
-                }
-                else
-                {
-                    byte[] customerImage;
-                    if (imageLocation == "")
+                    int confirm = adc.checkIfUsernameExists(username);
+                    if (confirm > 0)
                     {
-                        MessageBox.Show("Please add a profile picture!");
+                        MessageBox.Show("Username already exists!");
+                        usernameTextBox.Text = "";
                     }
                     else
                     {
+                        byte[] customerImage;
                         customerImage = imgLib.addImage(imageLocation);
                         adc.addUser(userId, username, password);
-                        Boolean confirmData = cdc.addCustomerData(customerImage, userId, username, fullName, birthday,contactNumber, email, customerType);
+                        Boolean confirmData = cdc.addCustomerData(customerImage, userId, fullName, usernameTextBox.Text, birthday, contactNumber, email, customerType);
                         if (confirmData)
                         {
                             MessageBox.Show("Successfully Registered!");
@@ -102,6 +98,33 @@ namespace OrderingSystem.Account
                 MessageBox.Show(registrationException.Message);
             }
         }
+
+        private Boolean errorChecking()
+        {
+            if (usernameTextBox.Text.Equals(String.Empty) || fullnameTextBox.Text.Equals(String.Empty) || emailField.Text.Equals(String.Empty) || contactNumberField.Text.Equals(String.Empty) || passwordTextBox.Text.Equals(String.Empty))
+            {
+                MessageBox.Show("One or more fields are empty!");
+                return false;
+            }
+            else
+            {
+                if (!passwordTextBox.Text.Equals(repeatPasswordField.Text))
+                {
+                    MessageBox.Show("Password fields don't match!");
+                    return false;
+                }
+
+                if (imageLocation.Equals(""))
+                {
+                    MessageBox.Show("Please add a profile picture!");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+        }
         
         private int generateCustomerId()
         {
@@ -113,11 +136,7 @@ namespace OrderingSystem.Account
         {
             Login goToLogin = new Login();
             goToLogin.Show();
-            this.Hide();
-        }
-
-        private void Register_Load(object sender, EventArgs e)
-        {
+            this.Close();
         }
     }
 }
