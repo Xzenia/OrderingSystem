@@ -185,6 +185,7 @@
             this.BackColor = System.Drawing.Color.Sienna;
             this.ClientSize = new System.Drawing.Size(706, 226);
             this.Controls.Add(this.cbxProductManager);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddProduct";
             this.Text = "AddProduct";
             this.Load += new System.EventHandler(this.AddProduct_Load);

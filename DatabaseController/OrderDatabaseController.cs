@@ -33,6 +33,20 @@ namespace DatabaseController
             }
         }
 
+        public DataTable viewUserOrderHistory(int customerId)
+        {
+            using (SqlCommand cmd = new SqlCommand("SP_VIEWCUSTOMERORDERHISTORY", connect))
+            {
+                DataTable dt = new DataTable();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@CustomerId", customerId);
+                connect.Open();
+                dt.Load(cmd.ExecuteReader());
+                connect.Close();
+                return dt;
+            }
+        }
+
         public Boolean executeQuery(SqlCommand cmd)
         {
             connect.Open();
@@ -49,5 +63,4 @@ namespace DatabaseController
             }
         }
     }
-
 }

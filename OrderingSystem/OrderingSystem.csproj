@@ -116,6 +116,8 @@
     <Content Include="Resources\coffee3.jpg" />
     <Content Include="Resources\coffee31.jpg" />
     <Content Include="Resources\coffeelogo.png" />
+    <None Include="Resources\SplashArt.png" />
+    <None Include="Resources\LanCafe.png" />
     <None Include="Resources\defaultImage.bmp" />
     <Content Include="Resources\defaultPicture.jpg" />
     <Content Include="Resources\ic_add_a_photo_white_24dp_1x.png" />

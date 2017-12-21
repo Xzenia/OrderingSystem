@@ -13,7 +13,6 @@ namespace User
 {
     public partial class NewOrder : Form
     {
-        //ADD DATE AND TIME OF TRANSACTION!!!
         BindingSource bs = new BindingSource();
         ProductDatabaseController pdc = new ProductDatabaseController();
         OrderDatabaseController odc = new OrderDatabaseController();
@@ -80,7 +79,6 @@ namespace User
                  orders.Rows.RemoveAt(e.RowIndex);
              }
         }
-
 
         private void btnClick(object sender, EventArgs e)
         {
@@ -173,12 +171,10 @@ namespace User
             }
         }
 
-
         private void clearOrderList()
         {
             orders.Rows.Clear();
         }
-
 
     }
 }

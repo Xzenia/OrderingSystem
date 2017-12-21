@@ -33,19 +33,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.loggedInLabel = new System.Windows.Forms.Label();
             this.pnlbtm = new System.Windows.Forms.Panel();
-            this.btnUserDetails = new System.Windows.Forms.Button();
+            this.userDetailsBtn = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
-            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuGenRep = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTransRep = new System.Windows.Forms.ToolStripMenuItem();
             this.menuUser = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLogOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuChangeDetails = new System.Windows.Forms.ToolStripMenuItem();
-            this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,8 +68,8 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.loggedInLabel);
             this.panel3.Controls.Add(this.pnlbtm);
-            this.panel3.Controls.Add(this.btnMinimize);
             this.panel3.Controls.Add(this.btnExit);
+            this.panel3.Controls.Add(this.btnMinimize);
             this.panel3.Controls.Add(this.mainMenu);
             this.panel3.Location = new System.Drawing.Point(1, 2);
             this.panel3.Name = "panel3";
@@ -98,7 +93,7 @@
             // 
             this.pnlbtm.BackColor = System.Drawing.Color.Transparent;
             this.pnlbtm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlbtm.Controls.Add(this.btnUserDetails);
+            this.pnlbtm.Controls.Add(this.userDetailsBtn);
             this.pnlbtm.Controls.Add(this.btnHistory);
             this.pnlbtm.Controls.Add(this.btnOrder);
             this.pnlbtm.Location = new System.Drawing.Point(11, 41);
@@ -107,24 +102,24 @@
             this.pnlbtm.TabIndex = 7;
             this.pnlbtm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             // 
-            // btnUserDetails
+            // userDetailsBtn
             // 
-            this.btnUserDetails.BackColor = System.Drawing.Color.SaddleBrown;
-            this.btnUserDetails.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.btnUserDetails.FlatAppearance.BorderSize = 2;
-            this.btnUserDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserDetails.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserDetails.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnUserDetails.Image = global::User.Properties.Resources.ic_perm_identity_white_24dp_2x1;
-            this.btnUserDetails.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUserDetails.Location = new System.Drawing.Point(838, 3);
-            this.btnUserDetails.Name = "btnUserDetails";
-            this.btnUserDetails.Size = new System.Drawing.Size(270, 64);
-            this.btnUserDetails.TabIndex = 0;
-            this.btnUserDetails.Text = "Change Account Details";
-            this.btnUserDetails.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUserDetails.UseVisualStyleBackColor = false;
-            this.btnUserDetails.Click += new System.EventHandler(this.btnClick);
+            this.userDetailsBtn.BackColor = System.Drawing.Color.SaddleBrown;
+            this.userDetailsBtn.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
+            this.userDetailsBtn.FlatAppearance.BorderSize = 2;
+            this.userDetailsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userDetailsBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userDetailsBtn.ForeColor = System.Drawing.SystemColors.Control;
+            this.userDetailsBtn.Image = global::User.Properties.Resources.ic_perm_identity_white_24dp_2x1;
+            this.userDetailsBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.userDetailsBtn.Location = new System.Drawing.Point(838, 3);
+            this.userDetailsBtn.Name = "userDetailsBtn";
+            this.userDetailsBtn.Size = new System.Drawing.Size(270, 64);
+            this.userDetailsBtn.TabIndex = 0;
+            this.userDetailsBtn.Text = "Change Account Details";
+            this.userDetailsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.userDetailsBtn.UseVisualStyleBackColor = false;
+            this.userDetailsBtn.Click += new System.EventHandler(this.btnClick);
             // 
             // btnHistory
             // 
@@ -188,7 +183,7 @@
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.SandyBrown;
-            this.btnExit.Location = new System.Drawing.Point(1086, -1);
+            this.btnExit.Location = new System.Drawing.Point(1089, -1);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(49, 30);
             this.btnExit.TabIndex = 2;
@@ -201,9 +196,7 @@
             this.mainMenu.BackColor = System.Drawing.Color.SaddleBrown;
             this.mainMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile,
-            this.menuUser,
-            this.systemToolStripMenuItem});
+            this.menuUser});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(1142, 29);
@@ -211,34 +204,10 @@
             this.mainMenu.Text = "menuStrip1";
             this.mainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             // 
-            // mnuFile
-            // 
-            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuGenRep,
-            this.mnuTransRep});
-            this.mnuFile.Name = "mnuFile";
-            this.mnuFile.Size = new System.Drawing.Size(46, 25);
-            this.mnuFile.Text = "File";
-            // 
-            // mnuGenRep
-            // 
-            this.mnuGenRep.Name = "mnuGenRep";
-            this.mnuGenRep.Size = new System.Drawing.Size(278, 26);
-            this.mnuGenRep.Text = "Generate Sales Report";
-            this.mnuGenRep.Click += new System.EventHandler(this.menu_itemClicked);
-            // 
-            // mnuTransRep
-            // 
-            this.mnuTransRep.Name = "mnuTransRep";
-            this.mnuTransRep.Size = new System.Drawing.Size(278, 26);
-            this.mnuTransRep.Text = "Generate Transaction Report";
-            this.mnuTransRep.Click += new System.EventHandler(this.menu_itemClicked);
-            // 
             // menuUser
             // 
             this.menuUser.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuLogOut,
-            this.mnuChangeDetails});
+            this.mnuLogOut});
             this.menuUser.Name = "menuUser";
             this.menuUser.Size = new System.Drawing.Size(54, 25);
             this.menuUser.Text = "User";
@@ -246,22 +215,9 @@
             // mnuLogOut
             // 
             this.mnuLogOut.Name = "mnuLogOut";
-            this.mnuLogOut.Size = new System.Drawing.Size(380, 26);
+            this.mnuLogOut.Size = new System.Drawing.Size(152, 26);
             this.mnuLogOut.Text = "Log out";
             this.mnuLogOut.Click += new System.EventHandler(this.menu_itemClicked);
-            // 
-            // mnuChangeDetails
-            // 
-            this.mnuChangeDetails.Name = "mnuChangeDetails";
-            this.mnuChangeDetails.Size = new System.Drawing.Size(380, 26);
-            this.mnuChangeDetails.Text = "Change Details (Requires Admin Password)";
-            this.mnuChangeDetails.Click += new System.EventHandler(this.menu_itemClicked);
-            // 
-            // systemToolStripMenuItem
-            // 
-            this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
-            this.systemToolStripMenuItem.Size = new System.Drawing.Size(100, 25);
-            this.systemToolStripMenuItem.Text = "Application";
             // 
             // label1
             // 
@@ -332,6 +288,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UserMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order System";
@@ -351,21 +308,16 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip mainMenu;
-        private System.Windows.Forms.ToolStripMenuItem mnuFile;
-        private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
         private System.Windows.Forms.Panel pnlbtm;
-        private System.Windows.Forms.Button btnUserDetails;
+        private System.Windows.Forms.Button userDetailsBtn;
         private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStripMenuItem mnuGenRep;
-        private System.Windows.Forms.ToolStripMenuItem mnuTransRep;
         private System.Windows.Forms.ToolStripMenuItem menuUser;
         private System.Windows.Forms.ToolStripMenuItem mnuLogOut;
-        private System.Windows.Forms.ToolStripMenuItem mnuChangeDetails;
         private System.Windows.Forms.Label loggedInLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;

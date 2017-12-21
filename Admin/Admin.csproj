@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAccount.designer.cs">
+      <DependentUpon>AddAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,10 +88,6 @@
       <DependentUpon>CustomerList.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageClass\ImageLibrary.cs" />
-    <Compile Include="OrderTableDataSet.cs">
-      <DependentUpon>OrderTableDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="OrderTableDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -105,12 +107,6 @@
     <Compile Include="AdminSplashScreen.designer.cs">
       <DependentUpon>AdminSplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddAccount.Designer.cs">
-      <DependentUpon>AddAccount.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reports\OrderHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +119,9 @@
     <Compile Include="Reports\SalesReport.Designer.cs">
       <DependentUpon>SalesReport.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddAccount.resx">
+      <DependentUpon>AddAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,9 +146,6 @@
     </Compile>
     <EmbeddedResource Include="AdminSplashScreen.resx">
       <DependentUpon>AdminSplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddAccount.resx">
-      <DependentUpon>AddAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\OrderHistory.resx">
       <DependentUpon>OrderHistory.cs</DependentUpon>
@@ -192,6 +188,10 @@
       <Project>{0292fb69-a259-4f44-85bf-a3627bc60c7d}</Project>
       <Name>ProgramLibrary</Name>
     </ProjectReference>
+    <ProjectReference Include="..\User\User.csproj">
+      <Project>{4a3eeb30-c85e-4266-a220-799ee7b388b8}</Project>
+      <Name>User</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\coffee21.jpg" />
@@ -230,6 +230,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LanCafe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashArt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

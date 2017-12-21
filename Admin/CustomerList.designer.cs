@@ -30,24 +30,24 @@
         {
             this.customerListGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.productPictureBox = new System.Windows.Forms.PictureBox();
+            this.customerPictureBox = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.customerBirthdayField = new System.Windows.Forms.DateTimePicker();
+            this.customerEmailField = new System.Windows.Forms.MaskedTextBox();
+            this.customerCellphoneNumberField = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnAccept = new System.Windows.Forms.Button();
+            this.cancelBtn = new System.Windows.Forms.Button();
+            this.acceptBtn = new System.Windows.Forms.Button();
             this.membershipTypeComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.customerNameField = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.customerIdField = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.customerListGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // customerListGridView
@@ -64,23 +64,23 @@
             this.customerListGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.customerListGridView.Size = new System.Drawing.Size(750, 294);
             this.customerListGridView.TabIndex = 0;
+            this.customerListGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customerListGridView_CellClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.productPictureBox);
+            this.groupBox1.Controls.Add(this.customerPictureBox);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.dtpBirthday);
-            this.groupBox1.Controls.Add(this.maskedTextBox4);
-            this.groupBox1.Controls.Add(this.maskedTextBox3);
+            this.groupBox1.Controls.Add(this.customerBirthdayField);
+            this.groupBox1.Controls.Add(this.customerEmailField);
+            this.groupBox1.Controls.Add(this.customerCellphoneNumberField);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.btnReset);
-            this.groupBox1.Controls.Add(this.btnCancel);
-            this.groupBox1.Controls.Add(this.btnAccept);
+            this.groupBox1.Controls.Add(this.cancelBtn);
+            this.groupBox1.Controls.Add(this.acceptBtn);
             this.groupBox1.Controls.Add(this.membershipTypeComboBox);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.customerNameField);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,18 +92,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Details";
             // 
-            // productPictureBox
+            // customerPictureBox
             // 
-            this.productPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.productPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.productPictureBox.Image = global::Admin.Properties.Resources.defaultImage;
-            this.productPictureBox.InitialImage = null;
-            this.productPictureBox.Location = new System.Drawing.Point(172, 38);
-            this.productPictureBox.Name = "productPictureBox";
-            this.productPictureBox.Size = new System.Drawing.Size(144, 146);
-            this.productPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.productPictureBox.TabIndex = 26;
-            this.productPictureBox.TabStop = false;
+            this.customerPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.customerPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.customerPictureBox.Image = global::Admin.Properties.Resources.defaultImage;
+            this.customerPictureBox.InitialImage = null;
+            this.customerPictureBox.Location = new System.Drawing.Point(172, 38);
+            this.customerPictureBox.Name = "customerPictureBox";
+            this.customerPictureBox.Size = new System.Drawing.Size(144, 146);
+            this.customerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.customerPictureBox.TabIndex = 26;
+            this.customerPictureBox.TabStop = false;
+            this.customerPictureBox.DoubleClick += new System.EventHandler(this.customerPictureBox_DoubleClick);
             // 
             // label5
             // 
@@ -116,30 +117,32 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Product Picture: ";
             // 
-            // dtpBirthday
+            // customerBirthdayField
             // 
-            this.dtpBirthday.CustomFormat = "MM/DD/YYYY";
-            this.dtpBirthday.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBirthday.Location = new System.Drawing.Point(513, 120);
-            this.dtpBirthday.Name = "dtpBirthday";
-            this.dtpBirthday.Size = new System.Drawing.Size(227, 33);
-            this.dtpBirthday.TabIndex = 24;
+            this.customerBirthdayField.CustomFormat = "MMMM dd, yyyy";
+            this.customerBirthdayField.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerBirthdayField.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.customerBirthdayField.Location = new System.Drawing.Point(513, 120);
+            this.customerBirthdayField.Name = "customerBirthdayField";
+            this.customerBirthdayField.Size = new System.Drawing.Size(227, 33);
+            this.customerBirthdayField.TabIndex = 24;
+            this.customerBirthdayField.Value = new System.DateTime(2017, 12, 13, 0, 0, 0, 0);
             // 
-            // maskedTextBox4
+            // customerEmailField
             // 
-            this.maskedTextBox4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox4.Location = new System.Drawing.Point(513, 212);
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(228, 33);
-            this.maskedTextBox4.TabIndex = 22;
+            this.customerEmailField.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerEmailField.Location = new System.Drawing.Point(513, 212);
+            this.customerEmailField.Name = "customerEmailField";
+            this.customerEmailField.Size = new System.Drawing.Size(228, 33);
+            this.customerEmailField.TabIndex = 22;
             // 
-            // maskedTextBox3
+            // customerCellphoneNumberField
             // 
-            this.maskedTextBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox3.Location = new System.Drawing.Point(513, 165);
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(228, 33);
-            this.maskedTextBox3.TabIndex = 23;
+            this.customerCellphoneNumberField.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerCellphoneNumberField.Location = new System.Drawing.Point(513, 165);
+            this.customerCellphoneNumberField.Name = "customerCellphoneNumberField";
+            this.customerCellphoneNumberField.Size = new System.Drawing.Size(228, 33);
+            this.customerCellphoneNumberField.TabIndex = 23;
             // 
             // label7
             // 
@@ -174,44 +177,33 @@
             this.label6.TabIndex = 21;
             this.label6.Text = "Cellphone Number:";
             // 
-            // btnReset
+            // cancelBtn
             // 
-            this.btnReset.BackColor = System.Drawing.Color.Firebrick;
-            this.btnReset.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
-            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReset.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(315, 259);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(111, 39);
-            this.btnReset.TabIndex = 8;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = false;
+            this.cancelBtn.BackColor = System.Drawing.Color.Firebrick;
+            this.cancelBtn.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
+            this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBtn.Location = new System.Drawing.Point(386, 263);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(162, 39);
+            this.cancelBtn.TabIndex = 9;
+            this.cancelBtn.Text = "Cancel";
+            this.cancelBtn.UseVisualStyleBackColor = false;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // btnCancel
+            // acceptBtn
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Firebrick;
-            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(578, 259);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(162, 39);
-            this.btnCancel.TabIndex = 9;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = false;
-            // 
-            // btnAccept
-            // 
-            this.btnAccept.BackColor = System.Drawing.Color.SaddleBrown;
-            this.btnAccept.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
-            this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccept.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccept.Location = new System.Drawing.Point(432, 259);
-            this.btnAccept.Name = "btnAccept";
-            this.btnAccept.Size = new System.Drawing.Size(140, 39);
-            this.btnAccept.TabIndex = 9;
-            this.btnAccept.Text = "Accept";
-            this.btnAccept.UseVisualStyleBackColor = false;
+            this.acceptBtn.BackColor = System.Drawing.Color.SaddleBrown;
+            this.acceptBtn.FlatAppearance.BorderColor = System.Drawing.Color.PeachPuff;
+            this.acceptBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.acceptBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acceptBtn.Location = new System.Drawing.Point(181, 263);
+            this.acceptBtn.Name = "acceptBtn";
+            this.acceptBtn.Size = new System.Drawing.Size(140, 39);
+            this.acceptBtn.TabIndex = 9;
+            this.acceptBtn.Text = "Edit";
+            this.acceptBtn.UseVisualStyleBackColor = false;
+            this.acceptBtn.Click += new System.EventHandler(this.acceptBtn_Click);
             // 
             // membershipTypeComboBox
             // 
@@ -237,13 +229,13 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Membership Type: ";
             // 
-            // textBox1
+            // customerNameField
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(513, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 33);
-            this.textBox1.TabIndex = 6;
+            this.customerNameField.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerNameField.Location = new System.Drawing.Point(513, 32);
+            this.customerNameField.Name = "customerNameField";
+            this.customerNameField.Size = new System.Drawing.Size(228, 33);
+            this.customerNameField.TabIndex = 6;
             // 
             // label1
             // 
@@ -256,11 +248,21 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Name: ";
             // 
+            // customerIdField
+            // 
+            this.customerIdField.Location = new System.Drawing.Point(611, -1);
+            this.customerIdField.Name = "customerIdField";
+            this.customerIdField.ReadOnly = true;
+            this.customerIdField.Size = new System.Drawing.Size(100, 29);
+            this.customerIdField.TabIndex = 2;
+            this.customerIdField.Visible = false;
+            // 
             // CustomerList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.Sienna;
             this.ClientSize = new System.Drawing.Size(780, 632);
+            this.Controls.Add(this.customerIdField);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.customerListGridView);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -270,8 +272,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerListGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerPictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -281,18 +284,18 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox membershipTypeComboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox customerNameField;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnReset;
-        private System.Windows.Forms.Button btnAccept;
-        private System.Windows.Forms.DateTimePicker dtpBirthday;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.Button acceptBtn;
+        private System.Windows.Forms.DateTimePicker customerBirthdayField;
+        private System.Windows.Forms.MaskedTextBox customerEmailField;
+        private System.Windows.Forms.MaskedTextBox customerCellphoneNumberField;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.PictureBox productPictureBox;
+        private System.Windows.Forms.Button cancelBtn;
+        private System.Windows.Forms.PictureBox customerPictureBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox customerIdField;
     }
 }

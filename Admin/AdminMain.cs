@@ -5,10 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using DatabaseController;
 using Admin.Reports;
+using User;
 namespace Admin
 {
     public partial class AdminMain : Form
@@ -22,10 +25,40 @@ namespace Admin
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
-
+        LoginCookie cookie = new LoginCookie();
+        AccountTableDatabaseController adc = new AccountTableDatabaseController();
+        int deleteSwitch = 1;
         public AdminMain()
         {
             InitializeComponent();
+            Application.ApplicationExit += new EventHandler(this.Form1_Closing);
+        }
+
+        private void Form1_Closing(object sender, EventArgs e)
+        {
+            if (File.Exists("userData") && deleteSwitch == 1)
+            {
+                File.Delete("userData");
+            }
+        }
+
+        private void AdminMain_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                cookie.readFile();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("You haven't logged in. Please do so through OrderingSystem.exe");
+                this.Close();
+            }
+
+            if (!adc.confirmIfAdmin(cookie.CustomerUsername))
+            {
+                MessageBox.Show("Non-admin user detected! Program will now close...");
+                this.Close();
+            }
         }
 
         private void btnClick(object sender, EventArgs e)
@@ -65,7 +98,8 @@ namespace Admin
             switch (sbtn)
             {
                 case "addUserBtn":
-
+                    AddAccount goToAddAccount = new AddAccount();
+                    goToAddAccount.Show();
                     break;
                 case "manageCustomerBtn":
                     CustomerList goToCustomerList = new CustomerList();
@@ -93,7 +127,6 @@ namespace Admin
                 this.WindowState = FormWindowState.Normal;
             }
         }
-
         //Contains the custom drag event
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
@@ -104,5 +137,23 @@ namespace Admin
             }
         }
 
+        private void mnuLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        //Takes the admin to the user store
+        private void storeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deleteSwitch = 0;
+            System.Threading.Thread thread = new System.Threading.Thread(new System.Threading.ThreadStart(UserProcess));
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            this.Close();
+        }
+
+        public static void UserProcess()
+        {
+            Application.Run(new UserSplashScreen());
+        }
     }
 }

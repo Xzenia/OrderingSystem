@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 using User.Global;
 using DatabaseController;
+
 namespace User
 {
     public partial class UserMain : Form
@@ -27,6 +29,15 @@ namespace User
         public UserMain()
         {
             InitializeComponent();
+            Application.ApplicationExit += new EventHandler(this.Form1_Closing);
+        }
+
+        private void Form1_Closing(object sender, EventArgs e)
+        {
+            if (File.Exists("userData"))
+            {
+                File.Delete("userData");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -42,9 +53,17 @@ namespace User
                     break;
                 }
             }
-            cookie.readFile();
+
+            try
+            {
+                cookie.readFile();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("You haven't logged in. Please do so through OrderingSystem.exe");
+                this.Close();
+            }
             loggedInLabel.Text = "Welcome " + cookie.CustomerName + "! ";
-            
         }
         
         private void btnClick(object sender, EventArgs e)
@@ -70,7 +89,14 @@ namespace User
                     {
                         this.WindowState = FormWindowState.Normal;
                     }
-
+                    break;
+                case "btnHistory":
+                    CustomerOrderHistory goToOrderHistory = new CustomerOrderHistory();
+                    goToOrderHistory.Show();
+                    break;
+                case "userDetailsBtn":
+                    ChangeAccountInformation goToChangeAccount = new ChangeAccountInformation();
+                    goToChangeAccount.Show();
                     break;
                 default:
                     MessageBox.Show("Something went wrong!");
@@ -101,11 +127,8 @@ namespace User
                 case "mnuGenRep":
                     Environment.Exit(0);
                     break;
-                case "btnResize":
-
-                    break;
-                case "btnMinimize":
-
+                case "menuLogOut":
+                    Environment.Exit(0);
                     break;
                 default:
                     //MessageBox.Show("The event is : " + e.GetType().ToString());

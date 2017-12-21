@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace User
 {
@@ -18,14 +17,6 @@ namespace User
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new UserMain());
-        }
-
-        static void OnProcessExit(object sender, EventArgs e)
-        {
-            if (File.Exists("userData"))
-            {
-                File.Delete("userData");
-            }
         }
     }
 }

@@ -12,6 +12,13 @@ namespace DatabaseController
         private String customerType = "Regular";
         private int userId = 0;
         private String customerName = "lel";
+        private String customerUsername = "test";
+
+        public String CustomerUsername
+        {
+            get { return customerUsername; }
+            set { customerUsername = value; }
+        }
 
         public String CustomerName
         {
@@ -37,6 +44,7 @@ namespace DatabaseController
             tw.WriteLine(userId);
             tw.WriteLine(customerName);
             tw.WriteLine(customerType);
+            tw.WriteLine(customerUsername);
             tw.Close();
         }
 
@@ -47,6 +55,7 @@ namespace DatabaseController
             userId = Convert.ToInt32(File.ReadLines(fileName).Take(1).First());
             customerName = File.ReadLines(fileName).Skip(1).Take(1).First();
             customerType = File.ReadLines(fileName).Skip(2).Take(1).First();
+            customerUsername = File.ReadLines(fileName).Skip(3).Take(1).First();
             tr.Close();
         }
     }

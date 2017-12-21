@@ -32,27 +32,21 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.manageCustomerBtn = new System.Windows.Forms.Button();
             this.addUserBtn = new System.Windows.Forms.Button();
             this.pnlbtm = new System.Windows.Forms.Panel();
-            this.SalesLogBtn = new System.Windows.Forms.Button();
             this.SalesReportBtn = new System.Windows.Forms.Button();
             this.orderHistoryBtn = new System.Windows.Forms.Button();
             this.addProductBtn = new System.Windows.Forms.Button();
             this.manageProductsBtn = new System.Windows.Forms.Button();
-            this.lblLogged = new System.Windows.Forms.Label();
+            this.loggedInLabel = new System.Windows.Forms.Label();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.mainMenu = new System.Windows.Forms.MenuStrip();
-            this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuGenRep = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTransRep = new System.Windows.Forms.ToolStripMenuItem();
             this.menuUser = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLogOut = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuChangeDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.storeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.pnlbtm.SuspendLayout();
@@ -67,7 +61,7 @@
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Controls.Add(this.pnlbtm);
-            this.panel3.Controls.Add(this.lblLogged);
+            this.panel3.Controls.Add(this.loggedInLabel);
             this.panel3.Controls.Add(this.btnMinimize);
             this.panel3.Controls.Add(this.btnExit);
             this.panel3.Controls.Add(this.mainMenu);
@@ -79,7 +73,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImage = global::Admin.Properties.Resources.LanCafe;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(355, 53);
             this.panel1.Name = "panel1";
@@ -90,52 +84,12 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.SaddleBrown;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.manageCustomerBtn);
             this.panel2.Controls.Add(this.addUserBtn);
             this.panel2.Location = new System.Drawing.Point(846, 46);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(302, 446);
+            this.panel2.Size = new System.Drawing.Size(302, 198);
             this.panel2.TabIndex = 9;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.Control;
-            this.button4.Image = global::Admin.Properties.Resources.ic_perm_identity_white_24dp_2x1;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(10, 369);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(270, 64);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Change Account Details";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.accountManagement);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(10, 205);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(270, 63);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Manage User Accounts";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.accountManagement);
             // 
             // manageCustomerBtn
             // 
@@ -179,7 +133,6 @@
             // 
             this.pnlbtm.BackColor = System.Drawing.Color.SaddleBrown;
             this.pnlbtm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlbtm.Controls.Add(this.SalesLogBtn);
             this.pnlbtm.Controls.Add(this.SalesReportBtn);
             this.pnlbtm.Controls.Add(this.orderHistoryBtn);
             this.pnlbtm.Controls.Add(this.addProductBtn);
@@ -188,25 +141,6 @@
             this.pnlbtm.Name = "pnlbtm";
             this.pnlbtm.Size = new System.Drawing.Size(291, 379);
             this.pnlbtm.TabIndex = 9;
-            // 
-            // SalesLogBtn
-            // 
-            this.SalesLogBtn.BackColor = System.Drawing.Color.SaddleBrown;
-            this.SalesLogBtn.FlatAppearance.BorderColor = System.Drawing.Color.Chocolate;
-            this.SalesLogBtn.FlatAppearance.BorderSize = 2;
-            this.SalesLogBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.SalesLogBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SalesLogBtn.ForeColor = System.Drawing.SystemColors.Control;
-            this.SalesLogBtn.Image = ((System.Drawing.Image)(resources.GetObject("SalesLogBtn.Image")));
-            this.SalesLogBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SalesLogBtn.Location = new System.Drawing.Point(10, 22);
-            this.SalesLogBtn.Name = "SalesLogBtn";
-            this.SalesLogBtn.Size = new System.Drawing.Size(270, 63);
-            this.SalesLogBtn.TabIndex = 0;
-            this.SalesLogBtn.Text = "Show Sales Log";
-            this.SalesLogBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.SalesLogBtn.UseVisualStyleBackColor = false;
-            this.SalesLogBtn.Click += new System.EventHandler(this.btnClick);
             // 
             // SalesReportBtn
             // 
@@ -218,7 +152,7 @@
             this.SalesReportBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.SalesReportBtn.Image = ((System.Drawing.Image)(resources.GetObject("SalesReportBtn.Image")));
             this.SalesReportBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.SalesReportBtn.Location = new System.Drawing.Point(10, 91);
+            this.SalesReportBtn.Location = new System.Drawing.Point(10, 22);
             this.SalesReportBtn.Name = "SalesReportBtn";
             this.SalesReportBtn.Size = new System.Drawing.Size(270, 63);
             this.SalesReportBtn.TabIndex = 0;
@@ -237,11 +171,11 @@
             this.orderHistoryBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.orderHistoryBtn.Image = global::Admin.Properties.Resources.ic_history_white_24dp_2x;
             this.orderHistoryBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.orderHistoryBtn.Location = new System.Drawing.Point(10, 160);
+            this.orderHistoryBtn.Location = new System.Drawing.Point(10, 109);
             this.orderHistoryBtn.Name = "orderHistoryBtn";
             this.orderHistoryBtn.Size = new System.Drawing.Size(270, 64);
             this.orderHistoryBtn.TabIndex = 0;
-            this.orderHistoryBtn.Text = "Order History";
+            this.orderHistoryBtn.Text = "Order History/ Sales";
             this.orderHistoryBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.orderHistoryBtn.UseVisualStyleBackColor = false;
             this.orderHistoryBtn.Click += new System.EventHandler(this.btnClick);
@@ -256,7 +190,7 @@
             this.addProductBtn.ForeColor = System.Drawing.SystemColors.Control;
             this.addProductBtn.Image = global::Admin.Properties.Resources.ic_add_shopping_cart_white_24dp_2x;
             this.addProductBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.addProductBtn.Location = new System.Drawing.Point(10, 230);
+            this.addProductBtn.Location = new System.Drawing.Point(10, 200);
             this.addProductBtn.Name = "addProductBtn";
             this.addProductBtn.Size = new System.Drawing.Size(270, 63);
             this.addProductBtn.TabIndex = 0;
@@ -284,17 +218,17 @@
             this.manageProductsBtn.UseVisualStyleBackColor = false;
             this.manageProductsBtn.Click += new System.EventHandler(this.btnClick);
             // 
-            // lblLogged
+            // loggedInLabel
             // 
-            this.lblLogged.AutoSize = true;
-            this.lblLogged.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.lblLogged.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogged.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblLogged.Location = new System.Drawing.Point(831, 3);
-            this.lblLogged.Name = "lblLogged";
-            this.lblLogged.Size = new System.Drawing.Size(215, 21);
-            this.lblLogged.TabIndex = 8;
-            this.lblLogged.Text = "You are logged in as EugeneK";
+            this.loggedInLabel.AutoSize = true;
+            this.loggedInLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.loggedInLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loggedInLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.loggedInLabel.Location = new System.Drawing.Point(777, 3);
+            this.loggedInLabel.Name = "loggedInLabel";
+            this.loggedInLabel.Size = new System.Drawing.Size(251, 21);
+            this.loggedInLabel.TabIndex = 8;
+            this.loggedInLabel.Text = "You are logged in as Administrator";
             // 
             // btnMinimize
             // 
@@ -318,7 +252,7 @@
             this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.SandyBrown;
             this.btnExit.FlatAppearance.BorderSize = 2;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.Color.SandyBrown;
             this.btnExit.Location = new System.Drawing.Point(1086, -1);
             this.btnExit.Name = "btnExit";
@@ -333,7 +267,6 @@
             this.mainMenu.BackColor = System.Drawing.Color.SaddleBrown;
             this.mainMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFile,
             this.menuUser,
             this.systemToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
@@ -343,32 +276,10 @@
             this.mainMenu.Text = "menuStrip1";
             this.mainMenu.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             // 
-            // mnuFile
-            // 
-            this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuGenRep,
-            this.mnuTransRep});
-            this.mnuFile.Name = "mnuFile";
-            this.mnuFile.Size = new System.Drawing.Size(46, 25);
-            this.mnuFile.Text = "File";
-            // 
-            // mnuGenRep
-            // 
-            this.mnuGenRep.Name = "mnuGenRep";
-            this.mnuGenRep.Size = new System.Drawing.Size(278, 26);
-            this.mnuGenRep.Text = "Generate Sales Report";
-            // 
-            // mnuTransRep
-            // 
-            this.mnuTransRep.Name = "mnuTransRep";
-            this.mnuTransRep.Size = new System.Drawing.Size(278, 26);
-            this.mnuTransRep.Text = "Generate Transaction Report";
-            // 
             // menuUser
             // 
             this.menuUser.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuLogOut,
-            this.mnuChangeDetails});
+            this.mnuLogOut});
             this.menuUser.Name = "menuUser";
             this.menuUser.Size = new System.Drawing.Size(68, 25);
             this.menuUser.Text = "Admin";
@@ -376,20 +287,24 @@
             // mnuLogOut
             // 
             this.mnuLogOut.Name = "mnuLogOut";
-            this.mnuLogOut.Size = new System.Drawing.Size(380, 26);
+            this.mnuLogOut.Size = new System.Drawing.Size(152, 26);
             this.mnuLogOut.Text = "Log out";
-            // 
-            // mnuChangeDetails
-            // 
-            this.mnuChangeDetails.Name = "mnuChangeDetails";
-            this.mnuChangeDetails.Size = new System.Drawing.Size(380, 26);
-            this.mnuChangeDetails.Text = "Change Details (Requires Admin Password)";
+            this.mnuLogOut.Click += new System.EventHandler(this.mnuLogOut_Click);
             // 
             // systemToolStripMenuItem
             // 
+            this.systemToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.storeToolStripMenuItem});
             this.systemToolStripMenuItem.Name = "systemToolStripMenuItem";
             this.systemToolStripMenuItem.Size = new System.Drawing.Size(100, 25);
             this.systemToolStripMenuItem.Text = "Application";
+            // 
+            // storeToolStripMenuItem
+            // 
+            this.storeToolStripMenuItem.Name = "storeToolStripMenuItem";
+            this.storeToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.storeToolStripMenuItem.Text = "Store";
+            this.storeToolStripMenuItem.Click += new System.EventHandler(this.storeToolStripMenuItem_Click);
             // 
             // AdminMain
             // 
@@ -399,6 +314,7 @@
             this.ClientSize = new System.Drawing.Size(1148, 554);
             this.Controls.Add(this.panel3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminMain";
             this.Text = "AdminControl";
             this.panel3.ResumeLayout(false);
@@ -414,28 +330,22 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label lblLogged;
+        private System.Windows.Forms.Label loggedInLabel;
         private System.Windows.Forms.Button btnMinimize;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.MenuStrip mainMenu;
-        private System.Windows.Forms.ToolStripMenuItem mnuFile;
-        private System.Windows.Forms.ToolStripMenuItem mnuGenRep;
-        private System.Windows.Forms.ToolStripMenuItem mnuTransRep;
         private System.Windows.Forms.ToolStripMenuItem menuUser;
         private System.Windows.Forms.ToolStripMenuItem mnuLogOut;
-        private System.Windows.Forms.ToolStripMenuItem mnuChangeDetails;
         private System.Windows.Forms.ToolStripMenuItem systemToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button orderHistoryBtn;
-        private System.Windows.Forms.Button SalesLogBtn;
         private System.Windows.Forms.Button SalesReportBtn;
         private System.Windows.Forms.Button addUserBtn;
         private System.Windows.Forms.Panel pnlbtm;
         private System.Windows.Forms.Button manageCustomerBtn;
         private System.Windows.Forms.Button addProductBtn;
         private System.Windows.Forms.Button manageProductsBtn;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem storeToolStripMenuItem;
     }
 }
