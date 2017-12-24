@@ -25,6 +25,7 @@ namespace Admin
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern bool ReleaseCapture();
+
         LoginCookie cookie = new LoginCookie();
         AccountTableDatabaseController adc = new AccountTableDatabaseController();
         int deleteSwitch = 1;

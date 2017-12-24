@@ -93,7 +93,7 @@ namespace Admin
                 MessageBox.Show(openFileDialogException.Message);
             }
         }
-        //Add delete and refresh buttons
+
         private void btnClick(object sender, EventArgs e)
         {
             Button btn = sender as Button;

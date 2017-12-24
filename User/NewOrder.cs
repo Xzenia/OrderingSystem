@@ -42,11 +42,10 @@ namespace User
             {
                 if (e.RowIndex >= 0)
                 {
-                    
                     DataGridViewRow row = this.productListGridView.Rows[e.RowIndex];
                     String productName = row.Cells[1].Value.ToString();
                     double productPrice = Convert.ToDouble(row.Cells[2].Value.ToString());
-                    
+
                     Boolean ifItDoesNotExist = true;
                     foreach (DataRow dr in orders.Rows)
                     {
@@ -61,6 +60,7 @@ namespace User
                         int productQuantity = 1;
                         orders.Rows.Add(productName, productPrice, productQuantity);
                     }
+                    totalValueLabel.Text = Convert.ToString(calculateTotalCost());
                     
 
                 }
@@ -77,6 +77,7 @@ namespace User
              if (e.RowIndex >= 0)
              {
                  orders.Rows.RemoveAt(e.RowIndex);
+                 totalValueLabel.Text = Convert.ToString(calculateTotalCost());
              }
         }
 
@@ -114,6 +115,18 @@ namespace User
             prepareFinalDataTable();
         }
 
+        private double calculateTotalCost()
+        {
+            double total = 0;
+            for (int count = 0; count < orders.Rows.Count; count++)
+            {
+                double tempPrice = Convert.ToDouble(orders.Rows[count].ItemArray[1]);
+                tempPrice = Convert.ToDouble(orders.Rows[count].ItemArray[2]) * tempPrice;
+                total = total + tempPrice;
+            }
+            return total;
+        }
+
 
         private void prepareFinalDataTable()
         {
@@ -131,13 +144,9 @@ namespace User
             final.Columns.Add("TimeOrdered", typeof(string));
            
             Random rnd = new Random();
-            double totalCost = 0;
+            double totalCost = calculateTotalCost();
             cookie.readFile();
-            for (int count = 0; count < orders.Rows.Count; count++)
-            {
-                double tempPrice = Convert.ToDouble(orders.Rows[count].ItemArray[1]);
-                totalCost = totalCost + tempPrice;
-            }
+            
             for (int count = 0; count < orders.Rows.Count; count++)
             {
                 int customerId = cookie.UserId;
@@ -174,7 +183,9 @@ namespace User
         private void clearOrderList()
         {
             orders.Rows.Clear();
+            totalValueLabel.Text = Convert.ToString(calculateTotalCost());
         }
+
 
     }
 }
